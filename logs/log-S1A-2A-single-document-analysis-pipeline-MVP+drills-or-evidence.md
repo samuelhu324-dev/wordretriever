@@ -131,6 +131,49 @@
 - `P1-C1-S2`: 选定 Python CLI 作为单文档 pipeline 入口。
 - `P1-C1-S3`: 设计 source loader、normalized mapper、rules extractor 的最小骨架。
 
+## P0 Deliverable (Implementation defaults frozen | v1)
+
+### P0 outcome summary
+
+- 本 phase 的默认实现语言冻结为 Python。
+- 单文档 pipeline 的最小工程布局冻结为：
+  - `src/wordretriever/`
+  - `samples/manual/`
+  - `artifacts/_tmp_single_doc_pipeline/`
+- 输入路径、样本路径、artifacts 路径彼此分离，避免 phase 2 的实现工件与受控样本混在一起。
+- 本 phase 继续复用 `S1A-1A` 的 source / normalized / extraction / evidence contract，不新增并行 schema。
+
+### P0 frozen defaults for implementation
+
+- 入口语言：Python
+- 入口风格：CLI-first
+- 受控样本位置：`samples/manual/`
+- phase 2 临时工件位置：`artifacts/_tmp_single_doc_pipeline/`
+- 实现包根位置：`src/wordretriever/`
+
+### P0 outcome
+
+- `P0-C1-S1`、`P0-C1-S2`、`P0-C1-S3` 视为已冻结，可直接交给 `P1` 开始落实现骨架。
+
+## P1-C1-S1 Deliverable (Minimal directory and artifact layout | v1)
+
+### Created layout
+
+- `src/wordretriever/`
+- `samples/manual/`
+- `artifacts/_tmp_single_doc_pipeline/`
+
+### Layout rationale
+
+- `src/wordretriever/`：存放 phase 2 后续的 loader、mapper、extractor 和 CLI 入口。
+- `samples/manual/`：存放受控手工样本，作为单文档 drill 的输入源。
+- `artifacts/_tmp_single_doc_pipeline/`：存放 phase 2 drill 产生的 JSON 工件，避免和 logs 或 source samples 混放。
+
+### P1-C1-S1 outcome
+
+- phase 2 的最小目录布局已经落盘，可直接承接下一步 CLI 入口和 pipeline skeleton。
+- 后续实现应继续在上述目录内推进，不临时新开平行目录结构。
+
 ### P2 (Drill / Verify)
 
 - `P2-C1-S1`: 用 1 条受控样本跑通 pipeline 并生成 extraction JSON。
@@ -145,13 +188,13 @@
 
 ### P0 (Contract)
 
-- [ ] `P0-C1-S1`: Implementation entrypoint and layout | v1
-- [ ] `P0-C1-S2`: Input and output contract binding | v1
-- [ ] `P0-C1-S3`: Evidence contract reuse | v1
+- [x] `P0-C1-S1`: Implementation entrypoint and layout | v1
+- [x] `P0-C1-S2`: Input and output contract binding | v1
+- [x] `P0-C1-S3`: Evidence contract reuse | v1
 
 ### P1 (Implementation)
 
-- [ ] `P1-C1-S1`: Define minimal directory and artifact layout
+- [x] `P1-C1-S1`: Define minimal directory and artifact layout
 - [ ] `P1-C1-S2`: Fix Python CLI as pipeline entrypoint
 - [ ] `P1-C1-S3`: Draft pipeline skeleton for loader, mapper, and extractor
 
@@ -184,4 +227,5 @@
 
 ## Recent changes (for traceability, optional)
 
+- 2026-03-19: 完成 `S1A-2A/P0-C1-S1S3` 与 `P1-C1-S1`，冻结 phase 2 默认实现布局并创建最小目录结构。
 - 2026-03-19: 创建 `log-S1A-2A`，把第二阶段固定为单文档 analysis pipeline MVP 的实现准备与 drill/evidence 记录。

@@ -1,0 +1,1 @@
+"""wordretriever package for the single-document analysis pipeline MVP."""
