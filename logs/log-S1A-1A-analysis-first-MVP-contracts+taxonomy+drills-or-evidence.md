@@ -658,12 +658,12 @@ We are looking for a Senior Platform Engineer to help build and operate our inte
 
 ### P0 (Contract)
 
-- [ ] `P0-C1-S1`: Freeze MVP boundary | v1
-- [ ] `P0-C1-S2`: Source contract | v1
-- [ ] `P0-C1-S3`: Normalized contract | v1
-- [ ] `P0-C1-S4`: Extraction contract | v1
-- [ ] `P0-C1-S5`: Taxonomy contract | v1
-- [ ] `P0-C1-S6`: Evidence contract | v1
+- [x] `P0-C1-S1`: Freeze MVP boundary | v1
+- [x] `P0-C1-S2`: Source contract | v1
+- [x] `P0-C1-S3`: Normalized contract | v1
+- [x] `P0-C1-S4`: Extraction contract | v1
+- [x] `P0-C1-S5`: Taxonomy contract | v1
+- [x] `P0-C1-S6`: Evidence contract | v1
 
 ### P1 (Contract examples / schema walkthrough)
 
