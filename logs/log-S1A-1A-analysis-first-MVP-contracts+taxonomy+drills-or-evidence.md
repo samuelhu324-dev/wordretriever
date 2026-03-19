@@ -436,21 +436,234 @@ We are looking for a Senior Platform Engineer to help build and operate our inte
 - v1 实现阶段应按“先 facts、后 inferences、最后 evidence 校验”的顺序落地。
 - 当前剩余的 review 工作应转向 `P2-C1-S2`，检查 taxonomy 是否足够覆盖首轮 MVP 样本。
 
+## P2-C1-S2 Deliverable (Taxonomy coverage review | v1)
+
+### Review objective
+
+- 检查当前 taxonomy 的 canonical labels 是否足以覆盖首轮 MVP 的目标岗位族与样本信号。
+- 明确哪些信号已经有稳定落点，哪些信号暂时只保留为 evidence 或 future extension。
+- 避免实现阶段为了覆盖零散样本而临时扩张 taxonomy，导致 v1 失控。
+
+### Coverage group A: Role family coverage
+
+- 当前 canonical labels：
+  - `platform_engineering`
+  - `devops`
+  - `sre`
+  - `cloud_infra`
+- 覆盖判断：
+  - 足以覆盖首轮 MVP 目标岗位族：Platform Engineer、DevOps Engineer、SRE。
+  - `cloud_infra` 作为邻近兜底分类是合理的，但首轮不应把它当成默认回收站。
+- 结论：role family taxonomy 对首轮 MVP 是够用的，不需要在 v1 新增更多岗位大类。
+
+### Coverage group B: Seniority coverage
+
+- 当前 canonical labels：
+  - `junior`
+  - `mid`
+  - `senior`
+  - `staff`
+  - `principal`
+- 覆盖判断：
+  - 足以承接首轮常见标题和职责语气。
+  - `lead`、`manager`、`architect` 这类词在首轮不强行吸收到 seniority taxonomy 中。
+  - 若标题和职责信号不足，应允许 `unknown` 或空值，而不是强行落到 `mid` / `senior`。
+- 结论：seniority taxonomy 对首轮 MVP 是够用的，但需要通过 inference rules 保持克制。
+
+### Coverage group C: Skills and tooling coverage
+
+- 当前 canonical labels：
+  - cloud: `aws`, `azure`, `gcp`
+  - containers: `kubernetes`, `docker`
+  - IaC: `terraform`
+  - observability: `datadog`, `prometheus`, `grafana`
+  - languages: `python`, `go`, `java`
+- 覆盖判断：
+  - 能覆盖首轮 walkthrough 样本中的核心技术词。
+  - 能覆盖 Platform / DevOps / SRE 邻近岗位中最常见的一层基础信号。
+  - 对首轮 MVP 来说，优先保证这些高频标签稳定，不急于增加长尾工具。
+- 结论：skills/tooling taxonomy 对首轮 MVP 核心样本是够用的。
+
+### Coverage group D: Known gaps kept out of v1 taxonomy
+
+- 下列信号当前经常出现，但暂不纳入 v1 canonical taxonomy：
+  - `CI/CD`
+  - `developer experience`
+  - `reliability`
+  - `internal developer platform`
+  - `mentoring`
+  - `ownership`
+- 处理原则：
+  - 首轮先保留为 evidence 或 inference supporting signals。
+  - 不为了单个样本临时新增 `focus_areas`、`delivery_practices`、`responsibility_tags`。
+  - 只有在多个样本反复出现且确实影响下游分析时，才在后续 phase 正式扩张 taxonomy。
+
+### Coverage group E: Admission rules for future taxonomy expansion
+
+- 新 canonical label 进入 taxonomy 前，应同时满足：
+  - 在多个样本中反复出现，而不是单次偶发。
+  - 对下游分析、对比或聚类结果有明显增益。
+  - 能稳定定义边界，不容易与已有 label 混淆。
+  - 能配套 alias / evidence / review 规则，而不是只加名字。
+- 若不满足以上条件，优先保留为 evidence，不进入 v1 taxonomy。
+
+### P2-C1-S2 Outcome
+
+- 当前 taxonomy 已足够覆盖首轮 MVP 的目标岗位族、seniority 层级与核心技术标签。
+- 已识别的高频但未收编信号应先保留在 evidence / inference supporting signals 中。
+- 下一步应进入 `P3-C1-S1`，把 walkthrough 与 review 的结果写成第一条 evidence JSON 口径说明。
+
 ### P3 (Evidence / closure)
 
 - `P3-C1-S1`: 记录 walkthrough evidence，包含样本 id、headSha、artifact path、PASS/FAIL。
 - `P3-C1-S2`: 输出 phase closure note，明确进入 `S1A-2A` 前的冻结项与开放项。
 
+## P3-C1-S1 Deliverable (Evidence JSON template and example | v1)
+
+### Evidence objective
+
+- 为本 phase 已完成的 walkthrough 与 review 提供统一、可追溯、可机器读取的 evidence 记录口径。
+- 保证后续每次 contract review、taxonomy review 或 sample walkthrough 都能用相同结构落证据。
+- 让后续 phase 在读取 evidence 时，不需要重新解释字段含义。
+
+### Evidence JSON template | v1
+
+```json
+{
+  "logId": "S1A-1A",
+  "phaseId": "P3-C1-S1",
+  "headSha": "<git-sha>",
+  "inputSampleId": "<sample-id>",
+  "extractorVersion": "<extractor-version>",
+  "taxonomyVersion": "<taxonomy-version>",
+  "artifactPaths": [
+    "<artifact-path-1>",
+    "<artifact-path-2>"
+  ],
+  "passFail": "PASS",
+  "observedSummary": [
+    "<observation-1>",
+    "<observation-2>"
+  ]
+}
+```
+
+### Evidence field semantics
+
+- `logId`: 对应 phase log 的稳定标识，例如 `S1A-1A`。
+- `phaseId`: 对应本次 evidence 属于哪一个 `P*-C*-S*` 单元。
+- `headSha`: 记录生成该 evidence 时的 git head，用于代码与文档回溯。
+- `inputSampleId`: 记录 walkthrough 或 review 绑定的输入样本。
+- `extractorVersion`: 若是纯 contract review 也保留字段，首轮可记录 `v1-rules-baseline`。
+- `taxonomyVersion`: 记录 review 所基于的 taxonomy 版本。
+- `artifactPaths`: 记录证据文件、样例文件、导出文件等路径。
+- `passFail`: 只允许 `PASS` 或 `FAIL`，避免自由文本污染统计。
+- `observedSummary`: 用于记录本次 run 的关键观察结论，优先写成短句列表。
+
+### Example evidence JSON for this phase
+
+```json
+{
+  "logId": "S1A-1A",
+  "phaseId": "P3-C1-S1",
+  "headSha": "<git-sha>",
+  "inputSampleId": "manual:platform-engineer:002",
+  "extractorVersion": "v1-rules-baseline",
+  "taxonomyVersion": "v1",
+  "artifactPaths": [
+    "samples/manual/platform-engineer-002.txt",
+    "artifacts/_tmp_jd_analysis_contracts/drills_<ts>.json"
+  ],
+  "passFail": "PASS",
+  "observedSummary": [
+    "Source, normalized, and extraction contracts can carry one realistic Platform Engineer JD sample.",
+    "Facts and inferences remain semantically distinct under the current review rules.",
+    "Current taxonomy is sufficient for the first MVP scope.",
+    "CI/CD and developer experience signals remain outside v1 canonical labels and stay in evidence."
+  ]
+}
+```
+
+### Evidence recording rules
+
+- 每个 `P*-C*-S*` 最少应有 1 条 evidence JSON 记录。
+- evidence 必须绑定具体样本或 review 对象，不能写成无输入上下文的抽象结论。
+- `artifactPaths` 应优先记录工作区相对路径，保持迁移和回溯简单。
+- 若本次检查失败，`passFail` 必须写 `FAIL`，并在 `observedSummary` 中写出阻断原因。
+- evidence 是 phase 级别的事实记录，不承担解释业务语义的职责。
+
+### P3-C1-S1 Outcome
+
+- 本 phase 的 evidence 记录格式已经稳定，可供后续 contract review 和 implementation drill 复用。
+- 下一步应进入 `P3-C1-S2`，把本 phase 的冻结项、开放项和 handoff 边界写成 closure note。
+
+## P3-C1-S2 Deliverable (Phase closure note and handoff boundary | v1)
+
+### Closure objective
+
+- 正式收口 `S1A-1A` 的 phase 产出，避免后续实现阶段继续回头修改基础定义。
+- 明确哪些内容在 v1 中视为冻结项，哪些内容仍是开放项或后续扩展点。
+- 为 `S1A-2A` 提供直接可执行的 handoff 边界，减少实现前的解释成本。
+
+### Frozen outputs for handoff to S1A-2A
+
+- 以下内容视为 `S1A-1A` 的冻结交付：
+  - source contract 字段边界
+  - normalized contract 字段边界
+  - extraction contract 中 `facts / inferences / evidence` 的分层语义
+  - role family 与 seniority 的 v1 canonical labels
+  - 首轮 skills/tooling canonical labels
+  - facts vs inferences review rules
+  - evidence JSON v1 模板与字段语义
+- `S1A-2A` 可以直接基于以上冻结项进入实现，不应重新发明输入输出结构。
+
+### Open items intentionally deferred after S1A-1A
+
+- 以下内容明确不在本 phase 收口，保留为后续开放项：
+  - `CI/CD`、`developer experience`、`reliability` 等新 taxonomy 维度是否入表
+  - 更细粒度的 `focus_areas` / `delivery_practices` / `responsibility_tags`
+  - 采集适配器、网页来源接入与平台差异处理
+  - 复杂的 confidence scoring 与 ranking 机制
+  - 大规模 gold set 与系统化回归基线
+
+### Implementation boundary for S1A-2A
+
+- `S1A-2A` 的实现起点应限定为：
+  - 接收 manual text / JSON / CSV 输入
+  - 生成 source object
+  - 执行最小 normalized mapping
+  - 产出 rules-first extraction JSON
+  - 绑定 evidence spans
+- `S1A-2A` 不应做的事情：
+  - 回退修改 `S1A-1A` 已冻结的 schema 语义
+  - 临时扩张 taxonomy 去追单个样本
+  - 在未新增 phase contract 的前提下引入新的输出层级
+
+### Exit criteria for closing S1A-1A
+
+- `P1-C1-S1` 已完成：最小 example objects 已提供。
+- `P1-C1-S2` 已完成：真实风格 JD walkthrough 已提供。
+- `P2-C1-S1` 已完成：facts vs inferences 边界规则已明确。
+- `P2-C1-S2` 已完成：taxonomy coverage 已确认足以支持首轮 MVP。
+- `P3-C1-S1` 已完成：evidence JSON 模板与示例已建立。
+- 当前剩余工作不再属于 contract baseline，而属于下一 phase 的实现工作。
+
+### P3-C1-S2 Outcome
+
+- `S1A-1A` 已形成可交接给实现 phase 的 contract baseline。
+- `S1A-2A` 可以开始实现单文档 analysis pipeline，而不需要再回头定义 schema。
+- 若后续实现发现结构性缺口，应通过新 phase 或新 cycle 回写，而不是直接破坏当前冻结面。
+
 ## Execution Checklist (unchecked)
 
 ### P0 (Contract)
 
-- [ ] `P0-C1-S1`: Freeze MVP boundary | v1
-- [ ] `P0-C1-S2`: Source contract | v1
-- [ ] `P0-C1-S3`: Normalized contract | v1
-- [ ] `P0-C1-S4`: Extraction contract | v1
-- [ ] `P0-C1-S5`: Taxonomy contract | v1
-- [ ] `P0-C1-S6`: Evidence contract | v1
+- [x] `P0-C1-S1`: Freeze MVP boundary | v1
+- [x] `P0-C1-S2`: Source contract | v1
+- [x] `P0-C1-S3`: Normalized contract | v1
+- [x] `P0-C1-S4`: Extraction contract | v1
+- [x] `P0-C1-S5`: Taxonomy contract | v1
+- [x] `P0-C1-S6`: Evidence contract | v1
 
 ### P1 (Contract examples / schema walkthrough)
 
@@ -460,12 +673,12 @@ We are looking for a Senior Platform Engineer to help build and operate our inte
 ### P2 (Drill / Verify)
 
 - [x] `P2-C1-S1`: Review facts vs inferences boundaries
-- [ ] `P2-C1-S2`: Review taxonomy coverage for MVP
+- [x] `P2-C1-S2`: Review taxonomy coverage for MVP
 
 ### P3 (Evidence / closure)
 
-- [ ] `P3-C1-S1`: Record walkthrough evidence JSON
-- [ ] `P3-C1-S2`: Freeze phase outputs and handoff to implementation phase
+- [x] `P3-C1-S1`: Record walkthrough evidence JSON
+- [x] `P3-C1-S2`: Freeze phase outputs and handoff to implementation phase
 
 ## Evidence (reserved)
 
@@ -486,9 +699,46 @@ We are looking for a Senior Platform Engineer to help build and operate our inte
   - No blocking schema gap found for source, normalized, or extraction v1.
   - Optional future extension identified for delivery-practice or focus-area style signals.
   - Added explicit review rules that separate direct textual facts from judgment-based inferences.
+  - Confirmed current taxonomy is sufficient for the first MVP scope and identified deferred signal groups that remain outside v1 canonical labels.
+
+### P3-C1-S1 (Evidence JSON contract | 2026-03-19)
+
+- headSha: `<git sha>`
+- artifacts:
+  - `samples/manual/platform-engineer-002.txt`
+  - `artifacts/_tmp_jd_analysis_contracts/drills_<ts>.json`
+- env:
+  - `EXTRACTOR_VERSION=v1-rules-baseline`
+  - `TAXONOMY_VERSION=v1`
+- expected:
+  - Evidence JSON has a stable shape for future phase runs.
+  - Required fields are sufficient for traceability and simple machine checks.
+- observed:
+  - Added a reusable evidence JSON template and a phase-specific example record.
+  - Required fields now cover log identity, sample identity, versions, artifacts, and PASS/FAIL status.
+  - Evidence format is ready to be reused by later drills and implementation runs.
+
+### P3-C1-S2 (Phase closure and handoff | 2026-03-19)
+
+- headSha: `<git sha>`
+- artifacts:
+  - `logs/log-S1A-1A-analysis-first-MVP-contracts+taxonomy+drills-or-evidence.md`
+- env:
+  - `PHASE_ID=S1A-1A`
+  - `NEXT_PHASE=S1A-2A`
+- expected:
+  - Frozen outputs and deferred items are explicitly separated.
+  - The implementation phase has a stable handoff boundary.
+- observed:
+  - Recorded the frozen v1 outputs that S1A-2A must consume unchanged.
+  - Recorded deferred items that must not be expanded ad hoc during implementation.
+  - Declared S1A-2A as the next phase for single-document analysis pipeline implementation.
 
 ## Recent changes (for traceability, optional)
 
+- 2026-03-19: 完成 `P3-C1-S2`，收口 phase closure note，明确冻结项、开放项和 `S1A-2A` 的 handoff 边界。
+- 2026-03-19: 完成 `P3-C1-S1`，补充 evidence JSON 模板、字段语义、phase 示例以及记录规则。
+- 2026-03-19: 完成 `P2-C1-S2`，确认首轮 taxonomy coverage 够用，并记录暂不纳入 v1 的信号类型与扩张准入规则。
 - 2026-03-19: 完成 `P2-C1-S1`，补充 facts 与 inferences 的 review 规则、证据门槛与反例约束。
 - 2026-03-19: 完成 `P1-C1-S2`，新增 1 条真实风格 JD 的 walkthrough，并记录 schema gap 检查结论。
 - 2026-03-19: 完成 `P1-C1-S1`，补充 source / normalized / extraction 的 3 个最小样例对象，并修正 parent log 链接。
