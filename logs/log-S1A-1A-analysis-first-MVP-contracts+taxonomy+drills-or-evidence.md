@@ -597,6 +597,63 @@ We are looking for a Senior Platform Engineer to help build and operate our inte
 - 本 phase 的 evidence 记录格式已经稳定，可供后续 contract review 和 implementation drill 复用。
 - 下一步应进入 `P3-C1-S2`，把本 phase 的冻结项、开放项和 handoff 边界写成 closure note。
 
+## P3-C1-S2 Deliverable (Phase closure note and handoff boundary | v1)
+
+### Closure objective
+
+- 正式收口 `S1A-1A` 的 phase 产出，避免后续实现阶段继续回头修改基础定义。
+- 明确哪些内容在 v1 中视为冻结项，哪些内容仍是开放项或后续扩展点。
+- 为 `S1A-2A` 提供直接可执行的 handoff 边界，减少实现前的解释成本。
+
+### Frozen outputs for handoff to S1A-2A
+
+- 以下内容视为 `S1A-1A` 的冻结交付：
+  - source contract 字段边界
+  - normalized contract 字段边界
+  - extraction contract 中 `facts / inferences / evidence` 的分层语义
+  - role family 与 seniority 的 v1 canonical labels
+  - 首轮 skills/tooling canonical labels
+  - facts vs inferences review rules
+  - evidence JSON v1 模板与字段语义
+- `S1A-2A` 可以直接基于以上冻结项进入实现，不应重新发明输入输出结构。
+
+### Open items intentionally deferred after S1A-1A
+
+- 以下内容明确不在本 phase 收口，保留为后续开放项：
+  - `CI/CD`、`developer experience`、`reliability` 等新 taxonomy 维度是否入表
+  - 更细粒度的 `focus_areas` / `delivery_practices` / `responsibility_tags`
+  - 采集适配器、网页来源接入与平台差异处理
+  - 复杂的 confidence scoring 与 ranking 机制
+  - 大规模 gold set 与系统化回归基线
+
+### Implementation boundary for S1A-2A
+
+- `S1A-2A` 的实现起点应限定为：
+  - 接收 manual text / JSON / CSV 输入
+  - 生成 source object
+  - 执行最小 normalized mapping
+  - 产出 rules-first extraction JSON
+  - 绑定 evidence spans
+- `S1A-2A` 不应做的事情：
+  - 回退修改 `S1A-1A` 已冻结的 schema 语义
+  - 临时扩张 taxonomy 去追单个样本
+  - 在未新增 phase contract 的前提下引入新的输出层级
+
+### Exit criteria for closing S1A-1A
+
+- `P1-C1-S1` 已完成：最小 example objects 已提供。
+- `P1-C1-S2` 已完成：真实风格 JD walkthrough 已提供。
+- `P2-C1-S1` 已完成：facts vs inferences 边界规则已明确。
+- `P2-C1-S2` 已完成：taxonomy coverage 已确认足以支持首轮 MVP。
+- `P3-C1-S1` 已完成：evidence JSON 模板与示例已建立。
+- 当前剩余工作不再属于 contract baseline，而属于下一 phase 的实现工作。
+
+### P3-C1-S2 Outcome
+
+- `S1A-1A` 已形成可交接给实现 phase 的 contract baseline。
+- `S1A-2A` 可以开始实现单文档 analysis pipeline，而不需要再回头定义 schema。
+- 若后续实现发现结构性缺口，应通过新 phase 或新 cycle 回写，而不是直接破坏当前冻结面。
+
 ## Execution Checklist (unchecked)
 
 ### P0 (Contract)
@@ -621,7 +678,7 @@ We are looking for a Senior Platform Engineer to help build and operate our inte
 ### P3 (Evidence / closure)
 
 - [x] `P3-C1-S1`: Record walkthrough evidence JSON
-- [ ] `P3-C1-S2`: Freeze phase outputs and handoff to implementation phase
+- [x] `P3-C1-S2`: Freeze phase outputs and handoff to implementation phase
 
 ## Evidence (reserved)
 
@@ -661,8 +718,25 @@ We are looking for a Senior Platform Engineer to help build and operate our inte
   - Required fields now cover log identity, sample identity, versions, artifacts, and PASS/FAIL status.
   - Evidence format is ready to be reused by later drills and implementation runs.
 
+### P3-C1-S2 (Phase closure and handoff | 2026-03-19)
+
+- headSha: `<git sha>`
+- artifacts:
+  - `logs/log-S1A-1A-analysis-first-MVP-contracts+taxonomy+drills-or-evidence.md`
+- env:
+  - `PHASE_ID=S1A-1A`
+  - `NEXT_PHASE=S1A-2A`
+- expected:
+  - Frozen outputs and deferred items are explicitly separated.
+  - The implementation phase has a stable handoff boundary.
+- observed:
+  - Recorded the frozen v1 outputs that S1A-2A must consume unchanged.
+  - Recorded deferred items that must not be expanded ad hoc during implementation.
+  - Declared S1A-2A as the next phase for single-document analysis pipeline implementation.
+
 ## Recent changes (for traceability, optional)
 
+- 2026-03-19: 完成 `P3-C1-S2`，收口 phase closure note，明确冻结项、开放项和 `S1A-2A` 的 handoff 边界。
 - 2026-03-19: 完成 `P3-C1-S1`，补充 evidence JSON 模板、字段语义、phase 示例以及记录规则。
 - 2026-03-19: 完成 `P2-C1-S2`，确认首轮 taxonomy coverage 够用，并记录暂不纳入 v1 的信号类型与扩张准入规则。
 - 2026-03-19: 完成 `P2-C1-S1`，补充 facts 与 inferences 的 review 规则、证据门槛与反例约束。
