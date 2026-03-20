@@ -257,6 +257,39 @@
 - 后续 `P3-C1-S1` 可以直接复用这套 skeleton 跑最小 evaluation drill，而不需要再定义输出结构。
 - 下一步应进入 `P2-C1-S1` 或先做一次轻量级 skeleton 验证；按当前 phase 计划，建议继续 `P2-C1-S1` 固定 batch CLI 入口与目录约定。
 
+## P2-C1-S1 Deliverable (Batch CLI entrypoint and I/O layout | v1)
+
+### Added batch delivery assets
+
+- `src/wordretriever/batch.py`
+- `src/wordretriever/batch_cli.py`
+- `artifacts/_tmp_batch_delivery/.gitkeep`
+
+### Batch entrypoint fixed
+
+- phase 3 的 batch 入口当前固定为：`wordretriever.batch_cli`
+- CLI 输入参数：
+  - `input_path`
+  - `--input-format`，支持 `text` / `json` / `csv`
+  - `--output-dir`，默认写入 `artifacts/_tmp_batch_delivery/latest_run`
+
+### Batch I/O layout frozen for v1
+
+- 输入形态：
+  - 单个文件，或
+  - 指向同一格式文件集合的本地目录
+- 默认输出形态：
+  - 每条输入生成 1 个 `*.output.json`
+  - 全部输出落在同一个 batch run 目录下
+- v1 当前只固定“逐文档 JSON 输出目录”这层布局；CSV summary 与 batch run summary 留给 `P2-C1-S2`。
+
+### P2-C1-S1 outcome
+
+- phase 3 现在已有明确的 batch CLI 入口和默认输出目录约定。
+- 已用 `samples/gold/` 做最小 smoke run，`wordretriever.batch_cli` 成功处理 `3` 条 text 输入并写出逐文档 JSON 输出。
+- 后续 `P2-C1-S2` 可以在这个固定入口上补齐 CSV summary 与 batch run summary，而不需要再改入口语义。
+- 下一步应进入 `P2-C1-S2`，补全 batch JSON export、CSV 摘要与 batch summary 输出。
+
 ## Execution Checklist (unchecked)
 
 ### P0 (Contract)
@@ -273,7 +306,7 @@
 
 ### P2 (Batch import/export and delivery)
 
-- [ ] `P2-C1-S1`: Fix batch CLI entrypoint and I/O layout
+- [x] `P2-C1-S1`: Fix batch CLI entrypoint and I/O layout
 - [ ] `P2-C1-S2`: Export batch JSON, CSV summary, and run summary
 
 ### P3 (Drill / Evidence / closure)
@@ -287,6 +320,7 @@
 
 ## Recent changes (for traceability, optional)
 
+- 2026-03-20: 完成 `S1A-3A/P2-C1-S1`，新增 `batch.py` 与 `batch_cli.py`，固定 batch 入口为 `wordretriever.batch_cli` 并冻结默认输出目录布局。
 - 2026-03-20: 完成 `S1A-3A/P1-C1-S2`，新增 `evaluation.py` 与 evaluation summary template，冻结 phase 3 的 summary 输出骨架。
 - 2026-03-20: 完成 `S1A-3A/P1-C1-S1`，新增最小 gold set 样本与 `gold-set-v1.json`，冻结 phase 3 evaluation 的 expected 字段格式。
 - 2026-03-20: 创建 `log-S1A-3A`，冻结 phase 3 的 evaluation、batch import/export 与 MVP delivery surface 默认边界。
