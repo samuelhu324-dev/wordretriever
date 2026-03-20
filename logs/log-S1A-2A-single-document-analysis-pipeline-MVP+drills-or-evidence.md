@@ -224,6 +224,44 @@
 - 单文档 pipeline 的最小实现骨架已经存在，可直接进入受控样本 drill。
 - 下一步应进入 `P2-C1-S1`，用 `samples/manual/platform-engineer-002.txt` 跑出第一份 extraction artifact。
 
+## P2-C1-S1 Deliverable (Single-document drill run | v1)
+
+### Drill input
+
+- 输入样本：`samples/manual/platform-engineer-002.txt`
+- CLI 入口：`wordretriever.cli`
+- 输入格式：`text`
+- 输出工件：`artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`
+
+### Drill result summary
+
+- pipeline 已成功跑通 source -> normalized -> extraction 三段链路。
+- 已生成第一份单文档 extraction artifact。
+- artifact 包含：
+  - `source`
+  - `normalized`
+  - `extraction`
+- extraction 结果已包含：
+  - `facts.cloud_platforms = ["aws"]`
+  - `facts.containers = ["kubernetes"]`
+  - `facts.iac_tools = ["terraform"]`
+  - `facts.observability_tools = ["datadog", "prometheus"]`
+  - `facts.programming_languages = ["python", "go"]`
+  - `inferences.role_family = "platform_engineering"`
+  - `inferences.seniority = "senior"`
+
+### Drill observations
+
+- 当前受控样本使用 `text` loader 路径，title 能被捕获，但 `company` 与 `location` 仍为 `null`。
+- 这说明 CLI 和 pipeline 已可执行，但 text loader 还没有从正文前几行里提取 `Location:` / `Company:` 元信息。
+- 对 `P2-C1-S1` 来说，这不是阻断项，因为单文档 pipeline 已经真正跑通；但它会成为 `P2-C1-S2` review 的重点之一。
+
+### P2-C1-S1 outcome
+
+- `S1A-2A` 的第一条单文档 drill 已完成。
+- phase 2 已从“只有骨架”进入“可运行并产出 artifact”的状态。
+- 下一步应进入 `P2-C1-S2`，对照 `S1A-1A` 的 frozen contracts 检查输出是否需要修正。
+
 ### P2 (Drill / Verify)
 
 - `P2-C1-S1`: 用 1 条受控样本跑通 pipeline 并生成 extraction JSON。
@@ -250,7 +288,7 @@
 
 ### P2 (Drill / Verify)
 
-- [ ] `P2-C1-S1`: Run one controlled sample through the pipeline
+- [x] `P2-C1-S1`: Run one controlled sample through the pipeline
 - [ ] `P2-C1-S2`: Review output against frozen contracts
 
 ### P3 (Evidence / closure)
@@ -273,10 +311,13 @@
   - One controlled JD sample can reach extraction output without breaking the frozen contracts.
   - Output artifacts retain document_id, versions, and evidence fields.
 - observed:
-  - Pending first implementation drill.
+  - Ran `wordretriever.cli` against `samples/manual/platform-engineer-002.txt` and produced `artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`.
+  - Output retained document_id, extractor_version, taxonomy_version, and evidence fields.
+  - Text loader baseline did not yet lift company/location metadata into source fields, which will be reviewed in `P2-C1-S2`.
 
 ## Recent changes (for traceability, optional)
 
+- 2026-03-20: 完成 `S1A-2A/P2-C1-S1`，跑通第一条单文档 drill 并生成 extraction artifact。
 - 2026-03-20: 完成 `S1A-2A/P1-C1-S2` 与 `P1-C1-S3`，固定 Python CLI 入口并落下单文档 pipeline skeleton。
 - 2026-03-19: 完成 `S1A-2A/P0-C1-S1S3` 与 `P1-C1-S1`，冻结 phase 2 默认实现布局并创建最小目录结构。
 - 2026-03-19: 创建 `log-S1A-2A`，把第二阶段固定为单文档 analysis pipeline MVP 的实现准备与 drill/evidence 记录。
