@@ -1,0 +1,4 @@
+document_id,title,input_path,output_path,extractor_version,taxonomy_version
+manual:devops-engineer-001,Mid DevOps Engineer,samples\gold\devops-engineer-001.txt,artifacts\_tmp_guardrails\run_20260320T051541Z\batch\devops-engineer-001.output.json,v1-rules-baseline,v1
+manual:platform-engineer-002,Senior Platform Engineer,samples\gold\platform-engineer-002.txt,artifacts\_tmp_guardrails\run_20260320T051541Z\batch\platform-engineer-002.output.json,v1-rules-baseline,v1
+manual:sre-001,Staff Site Reliability Engineer,samples\gold\sre-001.txt,artifacts\_tmp_guardrails\run_20260320T051541Z\batch\sre-001.output.json,v1-rules-baseline,v1

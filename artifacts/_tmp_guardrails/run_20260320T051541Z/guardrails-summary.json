@@ -1,0 +1,21 @@
+{
+  "run_id": "20260320T051541Z",
+  "recorded_at": "2026-03-20T05:15:41Z",
+  "gold_set_ref": "samples/gold/gold-set-v1.json",
+  "batch_input_ref": "samples/gold",
+  "batch_input_format": "text",
+  "evaluation_summary_path": "artifacts\\_tmp_guardrails\\run_20260320T051541Z\\evaluation-summary.json",
+  "batch_output_dir": "artifacts\\_tmp_guardrails\\run_20260320T051541Z\\batch",
+  "batch_summary_json_path": "artifacts\\_tmp_guardrails\\run_20260320T051541Z\\batch\\batch-summary.json",
+  "batch_summary_csv_path": "artifacts\\_tmp_guardrails\\run_20260320T051541Z\\batch\\batch-summary.csv",
+  "report_template_path": "templates/report-template-v1.md",
+  "intake_template_path": "templates/jd-sample-intake-v1.txt",
+  "enrichment_template_path": "templates/gpt-enrichment-template-v1.json",
+  "samples_checked": 3,
+  "processed_count": 3,
+  "summary_counts": {
+    "PASS": 3,
+    "FAIL": 0
+  },
+  "pass_fail": "PASS"
+}

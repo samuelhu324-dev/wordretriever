@@ -1,0 +1,13 @@
+Title: <job title>
+Company: <company name or unknown>
+Location: <location or unknown>
+Source: manual
+SourceType: job_posting
+
+JD:
+<paste the full job description text here>
+
+Notes:
+- Keep the original wording where possible.
+- Do not pre-normalize tool names or seniority labels in the raw intake text.
+- If company or location is missing, leave the placeholder as unknown instead of inventing values.
