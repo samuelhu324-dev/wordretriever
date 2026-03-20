@@ -13,6 +13,7 @@ def normalize_document(source: SourceDocument) -> NormalizedDocument:
         company_normalized=_normalize_name(source.company),
         location_normalized=_normalize_location(source.location),
         employment_type=_infer_employment_type(source.content_text),
+        work_arrangement_normalized=_normalize_work_arrangement(source.work_arrangement),
         description_cleaned=_clean_description(source.content_text),
     )
 
@@ -53,6 +54,15 @@ def _infer_employment_type(content_text: str) -> str | None:
     if "contract" in lowered:
         return "contract"
     return "unknown"
+
+
+def _normalize_work_arrangement(work_arrangement: str | None) -> str | None:
+    if not work_arrangement:
+        return None
+    lowered = work_arrangement.strip().lower()
+    if lowered in {"hybrid", "remote", "on_site", "unknown"}:
+        return lowered
+    return re.sub(r"[^a-z0-9]+", "_", lowered).strip("_") or "unknown"
 
 
 def _clean_description(content_text: str) -> str:

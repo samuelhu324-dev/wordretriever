@@ -10,10 +10,10 @@ from .contracts import InputFormat
 from .pipeline import run_single_document_pipeline, write_pipeline_result
 
 
-FILE_PATTERNS: dict[InputFormat, str] = {
-    "text": "*.txt",
-    "json": "*.json",
-    "csv": "*.csv",
+FILE_PATTERNS: dict[InputFormat, tuple[str, ...]] = {
+    "text": ("*.txt", "*.md"),
+    "json": ("*.json",),
+    "csv": ("*.csv",),
 }
 
 
@@ -45,7 +45,10 @@ def collect_batch_input_paths(input_path: str, input_format: InputFormat) -> lis
     if not path.is_dir():
         raise ValueError(f"Batch input path does not exist: {path}")
 
-    matched_paths = sorted(path.glob(FILE_PATTERNS[input_format]))
+    matched_paths: list[Path] = []
+    for pattern in FILE_PATTERNS[input_format]:
+        matched_paths.extend(path.glob(pattern))
+    matched_paths = sorted({matched_path for matched_path in matched_paths})
     if not matched_paths:
         raise ValueError(f"No {input_format} inputs found under {path}")
     return matched_paths

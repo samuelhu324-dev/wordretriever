@@ -2,6 +2,7 @@
   "sample_id": "intake:platform-engineer-003",
   "reviewed_at": "2026-03-20T00:00:00Z",
   "review_status": "reviewed",
+  "decision": "promote_to_reviewed",
   "source_path": "samples/intake/platform-engineer-003.txt",
   "normalized_destination": "samples/reviewed/platform-engineer-003.txt",
   "deterministic_summary": {
@@ -13,10 +14,13 @@
       "terraform"
     ]
   },
+  "taxonomy_gaps": [],
   "review_notes": [
     "Location header present.",
     "Could become a future gold candidate if evidence remains stable."
   ],
+  "gold_candidate_eligible": false,
   "gold_candidate": false,
-  "enrichment_recommended": true
+  "enrichment_recommended": true,
+  "next_action": "keep running through batch reviews until promotion criteria are stable"
 }

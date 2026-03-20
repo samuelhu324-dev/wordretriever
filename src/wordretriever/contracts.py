@@ -19,8 +19,11 @@ class SourceDocument:
     company: str | None
     location: str | None
     posted_at: str | None
+    salary_text: str | None
+    work_arrangement: str | None
     content_text: str
     raw_payload_ref: str | None
+    employer_questions: list[str] = field(default_factory=list)
 
 
 @dataclass(slots=True)
@@ -30,6 +33,7 @@ class NormalizedDocument:
     company_normalized: str | None
     location_normalized: str | None
     employment_type: str | None
+    work_arrangement_normalized: str | None
     description_cleaned: str
 
 
@@ -39,8 +43,8 @@ class ExtractionResult:
     facts: dict[str, FactList]
     inferences: dict[str, str | None]
     evidence: EvidenceMap = field(default_factory=dict)
-    extractor_version: str = "v1-rules-baseline"
-    taxonomy_version: str = "v1"
+    extractor_version: str = "v2-rules-expanded"
+    taxonomy_version: str = "v2"
 
 
 @dataclass(slots=True)

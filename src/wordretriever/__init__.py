@@ -12,6 +12,8 @@ __all__ = [
     "loader",
     "normalize",
     "pipeline",
+    "review",
+    "review_cli",
     "sample_ops",
     "sample_ops_cli",
 ]

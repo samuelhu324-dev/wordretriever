@@ -30,9 +30,9 @@ def build_sample_batch_manifest(input_dir: str, stage: str, batch_id: str | None
     if not source_dir.is_dir():
         raise ValueError(f"Sample input directory does not exist: {source_dir}")
 
-    paths = sorted(source_dir.glob("*.txt"))
+    paths = sorted({*source_dir.glob("*.txt"), *source_dir.glob("*.md")})
     if not paths:
-        raise ValueError(f"No text samples found under {source_dir}")
+        raise ValueError(f"No text-like samples found under {source_dir}")
 
     resolved_batch_id = batch_id or _timestamp_slug()
     items = [
