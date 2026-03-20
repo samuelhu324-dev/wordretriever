@@ -1,0 +1,31 @@
+{
+  "document_id": "manual:example-001",
+  "enrichment_version": "v1",
+  "model": "gpt-5.4",
+  "prompt_version": "s1b-enrichment-v1",
+  "extracted_at": "2026-03-20T00:00:00Z",
+  "summary": "Short explanation of the role in plain language.",
+  "must_haves": [
+    "aws",
+    "kubernetes",
+    "terraform"
+  ],
+  "nice_to_haves": [
+    "datadog",
+    "go"
+  ],
+  "focus_areas": [
+    "platform_engineering",
+    "developer_experience"
+  ],
+  "commentary": {
+    "role_shape": "Why this role leans platform, devops, sre, or a hybrid.",
+    "risk_flags": [
+      "Tooling is broad but ownership boundaries are unclear."
+    ]
+  },
+  "confidence": 0.8,
+  "supporting_evidence": [
+    "Quoted lines or short excerpts from the JD that justify the enrichment output."
+  ]
+}

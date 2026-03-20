@@ -7,6 +7,8 @@ __all__ = [
     "contracts",
     "evaluation",
     "extract",
+    "guardrails",
+    "guardrails_cli",
     "loader",
     "normalize",
     "pipeline",
