@@ -27,6 +27,7 @@ def source_to_dict(source: SourceDocument) -> dict[str, object]:
 def _load_from_text(path: Path) -> SourceDocument:
     content_text = path.read_text(encoding="utf-8").strip()
     title = _first_non_empty_line(content_text)
+    metadata = _extract_text_metadata(content_text)
     document_id = f"manual:{path.stem}"
     return SourceDocument(
         document_id=document_id,
@@ -35,8 +36,8 @@ def _load_from_text(path: Path) -> SourceDocument:
         source_url=None,
         captured_at=_utc_timestamp(),
         title=title,
-        company=None,
-        location=None,
+        company=metadata.get("company"),
+        location=metadata.get("location"),
         posted_at=None,
         content_text=content_text,
         raw_payload_ref=str(path.relative_to(path.parent.parent.parent)),
@@ -96,6 +97,20 @@ def _first_non_empty_line(text: str) -> str | None:
         if stripped:
             return stripped
     return None
+
+
+def _extract_text_metadata(text: str) -> dict[str, str]:
+    metadata: dict[str, str] = {}
+    for line in text.splitlines()[:6]:
+        stripped = line.strip()
+        if not stripped or ":" not in stripped:
+            continue
+        key, value = stripped.split(":", 1)
+        normalized_key = key.strip().lower()
+        normalized_value = value.strip()
+        if normalized_key in {"company", "location"} and normalized_value:
+            metadata[normalized_key] = normalized_value
+    return metadata
 
 
 def _utc_timestamp() -> str:

@@ -262,6 +262,36 @@
 - phase 2 已从“只有骨架”进入“可运行并产出 artifact”的状态。
 - 下一步应进入 `P2-C1-S2`，对照 `S1A-1A` 的 frozen contracts 检查输出是否需要修正。
 
+## P2-C1-S2 Deliverable (Output review against frozen contracts | v1)
+
+### Review scope
+
+- 对照 `S1A-1A` 的 source / normalized / extraction contract 做本次 artifact review。
+- 对照 facts vs inferences review rules 检查输出语义是否漂移。
+- 对照 taxonomy coverage 检查当前 extraction 是否落在允许的 canonical labels 内。
+
+### Review findings
+
+- 合格项：
+  - artifact 已包含 `source`、`normalized`、`extraction` 三层结构。
+  - `document_id`、`extractor_version`、`taxonomy_version` 已保留。
+  - facts 的 canonical labels 落在 `S1A-1A` 已冻结的 taxonomy 范围内。
+  - `role_family` 与 `seniority` 仍然留在 `inferences`，没有污染 normalized 层。
+- 发现的问题：
+  - text loader 初版没有从头部 `Location:` / `Company:` 元信息提取 source 字段。
+  - inference/fact evidence 初版更偏向 canonical label 回填，而不是优先保留原文片段。
+
+### Review actions taken
+
+- 已修正 text loader：从手工文本头部提取 `Company:` 和 `Location:`。
+- 已修正 extractor evidence：优先记录原文行片段，而不是 canonical label 自身。
+- 已重新运行 `samples/manual/platform-engineer-002.txt`，刷新 artifact 输出。
+
+### Review outcome
+
+- 当前输出已更贴近 `S1A-1A` 的 frozen contracts 与 evidence 口径。
+- `P2-C1-S2` 通过，phase 2 可以进入 `P3-C1-S1` 的 evidence 记录收口。
+
 ### P2 (Drill / Verify)
 
 - `P2-C1-S1`: 用 1 条受控样本跑通 pipeline 并生成 extraction JSON。
@@ -289,7 +319,7 @@
 ### P2 (Drill / Verify)
 
 - [x] `P2-C1-S1`: Run one controlled sample through the pipeline
-- [ ] `P2-C1-S2`: Review output against frozen contracts
+- [x] `P2-C1-S2`: Review output against frozen contracts
 
 ### P3 (Evidence / closure)
 
@@ -313,10 +343,12 @@
 - observed:
   - Ran `wordretriever.cli` against `samples/manual/platform-engineer-002.txt` and produced `artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`.
   - Output retained document_id, extractor_version, taxonomy_version, and evidence fields.
-  - Text loader baseline did not yet lift company/location metadata into source fields, which will be reviewed in `P2-C1-S2`.
+  - Text loader baseline initially missed company/location metadata and was corrected during `P2-C1-S2` review.
+  - Evidence snippets now prefer original text lines rather than canonical labels.
 
 ## Recent changes (for traceability, optional)
 
+- 2026-03-20: 完成 `S1A-2A/P2-C1-S2`，基于 review 修正 text loader 元信息提取与 evidence 片段保留策略。
 - 2026-03-20: 完成 `S1A-2A/P2-C1-S1`，跑通第一条单文档 drill 并生成 extraction artifact。
 - 2026-03-20: 完成 `S1A-2A/P1-C1-S2` 与 `P1-C1-S3`，固定 Python CLI 入口并落下单文档 pipeline skeleton。
 - 2026-03-19: 完成 `S1A-2A/P0-C1-S1S3` 与 `P1-C1-S1`，冻结 phase 2 默认实现布局并创建最小目录结构。

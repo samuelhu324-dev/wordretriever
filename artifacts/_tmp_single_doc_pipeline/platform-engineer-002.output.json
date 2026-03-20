@@ -4,10 +4,10 @@
     "source": "manual",
     "source_type": "job_posting",
     "source_url": null,
-    "captured_at": "2026-03-20T00:31:52Z",
+    "captured_at": "2026-03-20T00:49:04Z",
     "title": "Senior Platform Engineer",
-    "company": null,
-    "location": null,
+    "company": "Northstar Cloud",
+    "location": "Sydney, NSW",
     "posted_at": null,
     "content_text": "Senior Platform Engineer\nLocation: Sydney, NSW\nCompany: Northstar Cloud\n\nWe are looking for a Senior Platform Engineer to help build and operate our internal developer platform on AWS. You will design reusable Kubernetes-based infrastructure, manage Terraform modules, and improve observability with Datadog and Prometheus. The role works closely with software teams to improve CI/CD workflows and developer experience. Strong Python or Go skills are preferred. Experience supporting production systems and mentoring engineers is highly regarded.",
     "raw_payload_ref": "samples\\manual\\platform-engineer-002.txt"
@@ -15,8 +15,8 @@
   "normalized": {
     "document_id": "manual:platform-engineer-002",
     "title_normalized": "platform engineer",
-    "company_normalized": null,
-    "location_normalized": null,
+    "company_normalized": "northstar cloud",
+    "location_normalized": "sydney_nsw",
     "employment_type": "unknown",
     "description_cleaned": "Senior Platform Engineer Location: Sydney, NSW Company: Northstar Cloud We are looking for a Senior Platform Engineer to help build and operate our internal developer platform on AWS. You will design reusable Kubernetes-based infrastructure, manage Terraform modules, and improve observability with Datadog and Prometheus. The role works closely with software teams to improve CI/CD workflows and developer experience. Strong Python or Go skills are preferred. Experience supporting production systems and mentoring engineers is highly regarded."
   },
@@ -47,27 +47,27 @@
     },
     "evidence": {
       "cloud_platforms": [
-        "aws"
+        "We are looking for a Senior Platform Engineer to help build and operate our internal developer platform on AWS. You will design reusable Kubernetes-based infrastructure, manage Terraform modules, and improve observability with Datadog and Prometheus. The role works closely with software teams to improve CI/CD workflows and developer experience. Strong Python or Go skills are preferred. Experience supporting production systems and mentoring engineers is highly regarded."
       ],
       "containers": [
-        "kubernetes"
+        "We are looking for a Senior Platform Engineer to help build and operate our internal developer platform on AWS. You will design reusable Kubernetes-based infrastructure, manage Terraform modules, and improve observability with Datadog and Prometheus. The role works closely with software teams to improve CI/CD workflows and developer experience. Strong Python or Go skills are preferred. Experience supporting production systems and mentoring engineers is highly regarded."
       ],
       "iac_tools": [
-        "terraform"
+        "We are looking for a Senior Platform Engineer to help build and operate our internal developer platform on AWS. You will design reusable Kubernetes-based infrastructure, manage Terraform modules, and improve observability with Datadog and Prometheus. The role works closely with software teams to improve CI/CD workflows and developer experience. Strong Python or Go skills are preferred. Experience supporting production systems and mentoring engineers is highly regarded."
       ],
       "observability_tools": [
-        "datadog",
-        "prometheus"
+        "We are looking for a Senior Platform Engineer to help build and operate our internal developer platform on AWS. You will design reusable Kubernetes-based infrastructure, manage Terraform modules, and improve observability with Datadog and Prometheus. The role works closely with software teams to improve CI/CD workflows and developer experience. Strong Python or Go skills are preferred. Experience supporting production systems and mentoring engineers is highly regarded.",
+        "We are looking for a Senior Platform Engineer to help build and operate our internal developer platform on AWS. You will design reusable Kubernetes-based infrastructure, manage Terraform modules, and improve observability with Datadog and Prometheus. The role works closely with software teams to improve CI/CD workflows and developer experience. Strong Python or Go skills are preferred. Experience supporting production systems and mentoring engineers is highly regarded."
       ],
       "programming_languages": [
-        "python",
-        "go"
+        "We are looking for a Senior Platform Engineer to help build and operate our internal developer platform on AWS. You will design reusable Kubernetes-based infrastructure, manage Terraform modules, and improve observability with Datadog and Prometheus. The role works closely with software teams to improve CI/CD workflows and developer experience. Strong Python or Go skills are preferred. Experience supporting production systems and mentoring engineers is highly regarded.",
+        "We are looking for a Senior Platform Engineer to help build and operate our internal developer platform on AWS. You will design reusable Kubernetes-based infrastructure, manage Terraform modules, and improve observability with Datadog and Prometheus. The role works closely with software teams to improve CI/CD workflows and developer experience. Strong Python or Go skills are preferred. Experience supporting production systems and mentoring engineers is highly regarded."
       ],
       "role_family": [
-        "platform_engineering"
+        "Senior Platform Engineer"
       ],
       "seniority": [
-        "senior"
+        "Senior Platform Engineer"
       ]
     },
     "extractor_version": "v1-rules-baseline",
