@@ -1,0 +1,213 @@
+# log-S1A-3A (Phase 3: Minimal Evaluation, Batch Import/Export, and MVP Delivery Surface)
+
+---
+
+**id**: `S1A-3A`
+**kind**: `log`
+**title**: `minimal evaluation + batch import/export + MVP delivery surface + drills/evidence + v1`
+**status**: `draft`
+**scope**: `S1`
+**tags**: `EVOLUTION, jd-analysis, Drills, Evidence, epic/S1, sub/S1A-3A`
+**links**: ``
+  **issue**: ``
+  **pr**: ``
+  **runbook**: ``
+  **parent_log**: `logs/log-S1A-JD-analysis-intelligence-MVP+contracts-first-spine.md`
+  **previous_log**: `logs/log-S1A-2A-single-document-analysis-pipeline-MVP+drills-or-evidence.md`
+  **reference_log_1**: `logs/log-S1A-1A-analysis-first-MVP-contracts+taxonomy+drills-or-evidence.md`
+**created**: `2026-03-20`
+**updated**: `2026-03-20`
+
+---
+
+## Decision / Outcome
+
+**Decision**:
+
+- 本 phase 目标是在 `S1A-2A` 已稳定的单文档 pipeline 之上，补齐最小 evaluation、批量 import/export 与 MVP 交付入口。
+- v1 继续保持 `analysis-first` 路线，不引入网页抓取器、服务化部署或复杂前端。
+- phase 3 的核心任务不是重写 extractor，而是让现有 pipeline 进入“可批量运行、可最小评估、可最小交付”的状态。
+
+**Default choices (phase defaults / v1)**:
+
+- 默认 evaluation 形式：小样本 gold set + 规则化 review summary。
+- 默认批量范围：本地 folder / JSON / CSV 输入，不接外部数据源。
+- 默认交付入口：Python CLI-first，优先单命令批量运行方式。
+- 默认导出物：批量 JSON 结果、最小 CSV 摘要、evaluation summary JSON。
+- 默认证据纪律：每次 batch/eval drill 都记录输入集、输出工件、headSha 和 PASS/FAIL。
+
+## Definitions (optional)
+
+- `gold set`: 一组受控、可人工复核的 JD 样本及其期望标签/判断。
+- `batch run`: 对多条输入样本连续执行单文档 pipeline，并收集统一输出的运行方式。
+- `evaluation summary`: 对 gold set 的命中情况、偏差点和通过状态做的结构化汇总。
+- `delivery surface`: 面向使用者的最小入口，例如批量 CLI、导出目录和说明性输出。
+
+## Constraints
+
+- 不回退 `S1A-1A` 已冻结的 contracts / taxonomy / evidence 口径。
+- 不回退 `S1A-2A` 已冻结的单文档 pipeline 边界。
+- 不在本 phase 临时扩张岗位 taxonomy 去追单条异常样本。
+- 不把抓取适配器、数据库服务化、前端界面混入 phase 3。
+
+## Scope
+
+- `P0`: phase 3 defaults（evaluation、batch import/export、delivery surface、evidence contract）
+- `P1`: 最小 gold set 与 evaluation 骨架
+- `P2`: batch import/export 与 delivery 入口
+- `P3`: drills、evidence 与 phase closure
+
+## Success Criteria (DoD)
+
+- 至少有 1 组最小 gold set 能用于复核关键 extraction 输出。
+- 用户可以通过一个明确的批量入口对多条本地样本运行 pipeline。
+- 系统能导出批量 JSON 结果与最小 CSV 摘要。
+- evaluation 与 batch drill 都能生成可追溯 evidence。
+- phase 3 完成后，MVP 达到“可批量输入、可最小评估、可最小交付”的状态。
+
+## Stability (what stable means)
+
+- This log can be marked `stable` when:
+  - phase 3 的 evaluation、batch import/export 与 delivery 入口都已实际跑通。
+  - 至少有 1 条 evaluation evidence 与 1 条 batch delivery evidence 可追溯。
+  - `S1A-2A` 的稳定边界没有被 phase 3 回头破坏。
+
+## P0 (Contract | v1)
+
+### P0-C1-S1 (Evaluation contract | v1)
+
+- 最小 gold set 应覆盖：
+  - `role_family`
+  - `seniority`
+  - 至少 3 组核心 facts 类别
+- evaluation 输出至少包含：
+  - `sample_id`
+  - `expected`
+  - `observed`
+  - `pass_fail`
+  - `notes`
+- v1 不追求复杂评分体系，先以 PASS/FAIL + 偏差说明为主。
+
+### P0-C1-S2 (Batch import/export contract | v1)
+
+- batch 输入支持：
+  - 本地目录下的 text files
+  - 本地 JSON 文件
+  - 本地 CSV 文件
+- batch 输出至少包含：
+  - 每条文档的结构化 JSON 结果
+  - 一份可读的 CSV 摘要
+  - 一份批量运行 summary JSON
+- 文档级输出仍复用 `S1A-2A` 的 source / normalized / extraction contract。
+
+### P0-C1-S3 (MVP delivery surface contract | v1)
+
+- phase 3 默认交付入口固定为批量 Python CLI。
+- v1 目标是“给用户一个可以直接跑本地样本集的命令”，而不是服务端 API。
+- 交付面至少应明确：
+  - 输入参数
+  - 输出目录
+  - summary 输出位置
+
+### P0-C1-S4 (Evidence contract reuse and extension | v1)
+
+- Evidence JSON must include:
+  - `inputBatchRef`
+  - `artifactPaths`
+  - `extractorVersion`
+  - `taxonomyVersion`
+  - `passFail`
+- 对 evaluation drill 还应补充：
+  - `goldSetRef`
+  - `samplesChecked`
+  - `summaryCounts`
+
+## Numbering
+
+- `S<n>`: Step.
+- `C<n>`: Cycle.
+
+**Commit / PR naming**:
+
+- `<ID>/P<phase>-C<cycle>-S<steps>: <summary>`, where `<steps>` can be a single step (`1`, meaning `...-S1`) or multiple consecutive steps grouped within the same phase / cycle (for example `1S2`, meaning `...-S1S2`).
+
+**Branch convention**:
+
+- `S1A-3A` 相关改动继续落在当前 `S1A-*` 分支上，与 parent spine 和 phase 1 / 2 的证据链保持连续。
+- phase 3 若同时推进 evaluation 与 batch delivery，仍优先按 `P*-C*-S*` 小提交切开，不在一条提交里混入过多责任。
+
+**Commit discipline (recommended)**:
+
+- 推荐节奏：
+  - `P0` 先冻结 phase 3 默认边界
+  - `P1` 先落 gold set / evaluation skeleton
+  - `P2` 再落 batch import/export 与交付入口
+  - `P3` 最后做 drills / evidence / closure
+
+## Plan (draft)
+
+### P1 (Evaluation)
+
+- `P1-C1-S1`: 定义最小 gold set 样本与期望字段格式。
+- `P1-C1-S2`: 落 evaluation summary skeleton，先支持 PASS/FAIL 与偏差说明。
+
+### P2 (Batch import/export and delivery)
+
+- `P2-C1-S1`: 固定 batch CLI 入口与输入输出目录约定。
+- `P2-C1-S2`: 输出批量 JSON 结果、CSV 摘要与 batch summary。
+
+### P3 (Drill / Evidence / closure)
+
+- `P3-C1-S1`: 用最小 gold set 跑一轮 evaluation drill。
+- `P3-C1-S2`: 用最小 batch 输入跑一轮 delivery drill，并收口 phase 3。
+
+## P0 Deliverable (Phase 3 defaults frozen | v1)
+
+### P0 outcome summary
+
+- phase 3 的默认目标冻结为：evaluation + batch import/export + MVP delivery surface。
+- phase 3 的默认实现路径冻结为：先 gold set/eval，再 batch CLI/export，最后 drill/evidence。
+- phase 3 继续以 CLI-first、本地样本、本地工件为主，不引入外部依赖面的范围扩张。
+
+### P0 frozen defaults for implementation
+
+- gold set 建议位置：`samples/gold/`
+- phase 3 evaluation 工件建议位置：`artifacts/_tmp_eval/`
+- phase 3 batch delivery 工件建议位置：`artifacts/_tmp_batch_delivery/`
+- batch 入口风格：Python CLI-first
+
+### P0 outcome
+
+- `P0-C1-S1`、`P0-C1-S2`、`P0-C1-S3`、`P0-C1-S4` 视为已冻结，可直接进入 `P1`。
+
+## Execution Checklist (unchecked)
+
+### P0 (Contract)
+
+- [x] `P0-C1-S1`: Freeze evaluation contract | v1
+- [x] `P0-C1-S2`: Freeze batch import/export contract | v1
+- [x] `P0-C1-S3`: Freeze MVP delivery surface contract | v1
+- [x] `P0-C1-S4`: Reuse and extend evidence contract | v1
+
+### P1 (Evaluation)
+
+- [ ] `P1-C1-S1`: Define minimal gold set samples and expected fields
+- [ ] `P1-C1-S2`: Add evaluation summary skeleton
+
+### P2 (Batch import/export and delivery)
+
+- [ ] `P2-C1-S1`: Fix batch CLI entrypoint and I/O layout
+- [ ] `P2-C1-S2`: Export batch JSON, CSV summary, and run summary
+
+### P3 (Drill / Evidence / closure)
+
+- [ ] `P3-C1-S1`: Run one minimal evaluation drill with gold samples
+- [ ] `P3-C1-S2`: Run one minimal batch delivery drill and close phase 3
+
+## Evidence (reserved)
+
+- Artifacts are the source of truth for evidence; this log records the head SHA, key parameters, and artifact paths (or CI run URLs).
+
+## Recent changes (for traceability, optional)
+
+- 2026-03-20: 创建 `log-S1A-3A`，冻结 phase 3 的 evaluation、batch import/export 与 MVP delivery surface 默认边界。

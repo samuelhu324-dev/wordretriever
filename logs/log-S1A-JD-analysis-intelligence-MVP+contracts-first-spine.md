@@ -18,7 +18,7 @@
   **reference_log_2**: `logs/_template-log-phase-drills-evidence.md`
   **phase_log_1**: `logs/log-S1A-1A-analysis-first-MVP-contracts+taxonomy+drills-or-evidence.md`
   **phase_log_2**: `logs/log-S1A-2A-single-document-analysis-pipeline-MVP+drills-or-evidence.md`
-  **phase_log_3**: ``
+  **phase_log_3**: `logs/log-S1A-3A-minimal-evaluation-batch-import-export+delivery-surface.md`
 **created**: `2026-03-19`
 **updated**: `2026-03-20`
 
@@ -93,7 +93,7 @@
 - `S1A-2A`（Phase 2）：实现单文档分析管线 MVP。
   - 详见：`logs/log-S1A-2A-single-document-analysis-pipeline-MVP+drills-or-evidence.md`
 - `S1A-3A`（Phase 3）：建立最小 evaluation、批量导入导出与 MVP 交付面。
-  - 详见：`TBD`
+  - 详见：`logs/log-S1A-3A-minimal-evaluation-batch-import-export+delivery-surface.md`
 
 ## Execution Checklist（当前骨架里程碑汇总）
 
@@ -104,9 +104,9 @@
 
 ## Current Status（进展摘要）
 
-- 当前仍处于 `draft`，但 `S1A-1A` 与 `S1A-2A` 都已完成并形成 evidence 链。
-- `S1A-2A` 已收口为 `stable` 的单文档 analysis pipeline MVP；当前执行重心应转入 `S1A-3A`。
-- 当前主要风险不再是“能不能跑通单文档”，而是 phase 3 若边界不清，容易把 evaluation、批量导入导出和额外交付面混成一团。
+- 当前仍处于 `draft`，但 `S1A-1A` 与 `S1A-2A` 都已完成并形成 evidence 链，`S1A-3A` 也已创建并冻结 P0 默认边界。
+- `S1A-3A` 当前处于 phase log 已建立、实现尚未开始的状态；执行重心已正式切换到 evaluation 与 batch delivery。
+- 当前主要风险是 phase 3 可能同时展开 gold set、batch CLI、export 三条线，导致实现顺序失控；因此需严格按 `P1 -> P2 -> P3` 推进。
 
 ## Notes（落地原则，可选）
 
@@ -141,6 +141,7 @@
 
 ## Recent changes（for traceability，可选）
 
+- 2026-03-20：创建 `S1A-3A` phase log，并冻结 phase 3 的默认边界、计划与执行顺序。
 - 2026-03-20：`S1A-2A` 完成 phase closure，单文档 pipeline MVP 已形成稳定入口、artifact 与 evidence 链，整体工作进入 `S1A-3A` 准备阶段。
 - 2026-03-19：新增 `S1A-2A` phase 索引，明确 Phase 2 进入单文档 analysis pipeline MVP 实现准备。
 - 2026-03-19：创建 `log-S1A`，确定本项目首轮为 analysis-first 的 MVP 主 spine，并把首个执行切片固定为 `S1A-1A`。
