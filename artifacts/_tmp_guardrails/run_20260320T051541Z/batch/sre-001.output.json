@@ -1,0 +1,67 @@
+{
+  "source": {
+    "document_id": "manual:sre-001",
+    "source": "manual",
+    "source_type": "job_posting",
+    "source_url": null,
+    "captured_at": "2026-03-20T05:15:41Z",
+    "title": "Staff Site Reliability Engineer",
+    "company": "Signal Ops",
+    "location": "Brisbane, QLD",
+    "posted_at": null,
+    "content_text": "Staff Site Reliability Engineer\nLocation: Brisbane, QLD\nCompany: Signal Ops\n\nWe need a Staff Site Reliability Engineer to improve reliability for customer-facing services on GCP. You will operate Kubernetes platforms, define SLOs and SLIs, and strengthen observability with Prometheus. Strong Go experience is preferred for automation and incident tooling.",
+    "raw_payload_ref": "samples\\gold\\sre-001.txt"
+  },
+  "normalized": {
+    "document_id": "manual:sre-001",
+    "title_normalized": "site reliability engineer",
+    "company_normalized": "signal ops",
+    "location_normalized": "brisbane_qld",
+    "employment_type": "unknown",
+    "description_cleaned": "Staff Site Reliability Engineer Location: Brisbane, QLD Company: Signal Ops We need a Staff Site Reliability Engineer to improve reliability for customer-facing services on GCP. You will operate Kubernetes platforms, define SLOs and SLIs, and strengthen observability with Prometheus. Strong Go experience is preferred for automation and incident tooling."
+  },
+  "extraction": {
+    "document_id": "manual:sre-001",
+    "facts": {
+      "cloud_platforms": [
+        "gcp"
+      ],
+      "containers": [
+        "kubernetes"
+      ],
+      "iac_tools": [],
+      "observability_tools": [
+        "prometheus"
+      ],
+      "programming_languages": [
+        "go"
+      ]
+    },
+    "inferences": {
+      "role_family": "sre",
+      "seniority": "staff"
+    },
+    "evidence": {
+      "cloud_platforms": [
+        "We need a Staff Site Reliability Engineer to improve reliability for customer-facing services on GCP. You will operate Kubernetes platforms, define SLOs and SLIs, and strengthen observability with Prometheus. Strong Go experience is preferred for automation and incident tooling."
+      ],
+      "containers": [
+        "We need a Staff Site Reliability Engineer to improve reliability for customer-facing services on GCP. You will operate Kubernetes platforms, define SLOs and SLIs, and strengthen observability with Prometheus. Strong Go experience is preferred for automation and incident tooling."
+      ],
+      "observability_tools": [
+        "We need a Staff Site Reliability Engineer to improve reliability for customer-facing services on GCP. You will operate Kubernetes platforms, define SLOs and SLIs, and strengthen observability with Prometheus. Strong Go experience is preferred for automation and incident tooling."
+      ],
+      "programming_languages": [
+        "We need a Staff Site Reliability Engineer to improve reliability for customer-facing services on GCP. You will operate Kubernetes platforms, define SLOs and SLIs, and strengthen observability with Prometheus. Strong Go experience is preferred for automation and incident tooling."
+      ],
+      "role_family": [
+        "Staff Site Reliability Engineer"
+      ],
+      "seniority": [
+        "Staff Site Reliability Engineer"
+      ]
+    },
+    "extractor_version": "v1-rules-baseline",
+    "taxonomy_version": "v1"
+  }
+}
