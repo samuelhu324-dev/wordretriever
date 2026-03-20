@@ -1,0 +1,5 @@
+Mid DevOps Engineer
+Location: Melbourne, VIC
+Company: Harbor Stack
+
+We are hiring a Mid DevOps Engineer to improve CI/CD reliability across our Azure environment. You will automate Docker-based build pipelines, manage Terraform for infrastructure changes, and extend Grafana dashboards for delivery visibility. Python is used for release tooling and deployment helpers.

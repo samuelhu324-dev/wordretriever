@@ -1,0 +1,34 @@
+{
+  "input_batch_ref": "samples/gold",
+  "input_format": "text",
+  "processed_count": 3,
+  "extractor_version": "v1-rules-baseline",
+  "taxonomy_version": "v1",
+  "output_dir": "artifacts\\_tmp_batch_delivery\\drill_20260320T045800Z",
+  "items": [
+    {
+      "input_path": "samples\\gold\\devops-engineer-001.txt",
+      "output_path": "artifacts\\_tmp_batch_delivery\\drill_20260320T045800Z\\devops-engineer-001.output.json",
+      "document_id": "manual:devops-engineer-001",
+      "title": "Mid DevOps Engineer",
+      "extractor_version": "v1-rules-baseline",
+      "taxonomy_version": "v1"
+    },
+    {
+      "input_path": "samples\\gold\\platform-engineer-002.txt",
+      "output_path": "artifacts\\_tmp_batch_delivery\\drill_20260320T045800Z\\platform-engineer-002.output.json",
+      "document_id": "manual:platform-engineer-002",
+      "title": "Senior Platform Engineer",
+      "extractor_version": "v1-rules-baseline",
+      "taxonomy_version": "v1"
+    },
+    {
+      "input_path": "samples\\gold\\sre-001.txt",
+      "output_path": "artifacts\\_tmp_batch_delivery\\drill_20260320T045800Z\\sre-001.output.json",
+      "document_id": "manual:sre-001",
+      "title": "Staff Site Reliability Engineer",
+      "extractor_version": "v1-rules-baseline",
+      "taxonomy_version": "v1"
+    }
+  ]
+}

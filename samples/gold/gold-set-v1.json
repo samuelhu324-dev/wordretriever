@@ -1,0 +1,88 @@
+{
+  "goldSetVersion": "v1",
+  "description": "Minimal evaluation gold set created for S1A-3A/P1-C1-S1.",
+  "expectedFields": {
+    "facts": [
+      "cloud_platforms",
+      "containers",
+      "iac_tools",
+      "observability_tools",
+      "programming_languages"
+    ],
+    "inferences": [
+      "role_family",
+      "seniority"
+    ]
+  },
+  "samples": [
+    {
+      "sample_id": "gold:platform-engineer-002",
+      "input_path": "samples/gold/platform-engineer-002.txt",
+      "input_format": "text",
+      "document_id": "manual:platform-engineer-002",
+      "expected": {
+        "facts": {
+          "cloud_platforms": ["aws"],
+          "containers": ["kubernetes"],
+          "iac_tools": ["terraform"],
+          "observability_tools": ["datadog", "prometheus"],
+          "programming_languages": ["python", "go"]
+        },
+        "inferences": {
+          "role_family": "platform_engineering",
+          "seniority": "senior"
+        }
+      },
+      "notes": [
+        "Covers platform_engineering role_family.",
+        "Exercises AWS, Kubernetes, Terraform, Datadog, Prometheus, Python, and Go."
+      ]
+    },
+    {
+      "sample_id": "gold:devops-engineer-001",
+      "input_path": "samples/gold/devops-engineer-001.txt",
+      "input_format": "text",
+      "document_id": "manual:devops-engineer-001",
+      "expected": {
+        "facts": {
+          "cloud_platforms": ["azure"],
+          "containers": ["docker"],
+          "iac_tools": ["terraform"],
+          "observability_tools": ["grafana"],
+          "programming_languages": ["python"]
+        },
+        "inferences": {
+          "role_family": "devops",
+          "seniority": "mid"
+        }
+      },
+      "notes": [
+        "Covers devops role_family.",
+        "Exercises Azure, Docker, Terraform, Grafana, Python, and CI/CD signals."
+      ]
+    },
+    {
+      "sample_id": "gold:sre-001",
+      "input_path": "samples/gold/sre-001.txt",
+      "input_format": "text",
+      "document_id": "manual:sre-001",
+      "expected": {
+        "facts": {
+          "cloud_platforms": ["gcp"],
+          "containers": ["kubernetes"],
+          "iac_tools": [],
+          "observability_tools": ["prometheus"],
+          "programming_languages": ["go"]
+        },
+        "inferences": {
+          "role_family": "sre",
+          "seniority": "staff"
+        }
+      },
+      "notes": [
+        "Covers sre role_family.",
+        "Exercises GCP, Kubernetes, Prometheus, Go, SLOs, and SLIs."
+      ]
+    }
+  ]
+}

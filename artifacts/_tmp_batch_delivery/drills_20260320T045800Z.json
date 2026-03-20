@@ -1,0 +1,23 @@
+{
+  "id": "S1A-3A/P3-C1-S2",
+  "phase": "S1A-3A",
+  "recordedAt": "2026-03-20T04:58:00Z",
+  "headSha": "9b588497c1231221e573592555c4c688bc043920",
+  "inputBatchRef": "samples/gold",
+  "processedCount": 3,
+  "extractorVersion": "v1-rules-baseline",
+  "taxonomyVersion": "v1",
+  "artifactPaths": [
+    "artifacts/_tmp_batch_delivery/drill_20260320T045800Z/batch-summary.json",
+    "artifacts/_tmp_batch_delivery/drill_20260320T045800Z/batch-summary.csv",
+    "artifacts/_tmp_batch_delivery/drill_20260320T045800Z/devops-engineer-001.output.json",
+    "artifacts/_tmp_batch_delivery/drill_20260320T045800Z/platform-engineer-002.output.json",
+    "artifacts/_tmp_batch_delivery/drill_20260320T045800Z/sre-001.output.json",
+    "artifacts/_tmp_batch_delivery/drills_20260320T045800Z.json"
+  ],
+  "passFail": "PASS",
+  "notes": [
+    "Batch delivery drill generated per-document outputs plus batch summary JSON and CSV.",
+    "The batch output set matches the frozen phase-3 delivery surface."
+  ]
+}

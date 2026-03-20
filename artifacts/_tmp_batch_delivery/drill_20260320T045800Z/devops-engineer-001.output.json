@@ -1,0 +1,72 @@
+{
+  "source": {
+    "document_id": "manual:devops-engineer-001",
+    "source": "manual",
+    "source_type": "job_posting",
+    "source_url": null,
+    "captured_at": "2026-03-20T04:58:22Z",
+    "title": "Mid DevOps Engineer",
+    "company": "Harbor Stack",
+    "location": "Melbourne, VIC",
+    "posted_at": null,
+    "content_text": "Mid DevOps Engineer\nLocation: Melbourne, VIC\nCompany: Harbor Stack\n\nWe are hiring a Mid DevOps Engineer to improve CI/CD reliability across our Azure environment. You will automate Docker-based build pipelines, manage Terraform for infrastructure changes, and extend Grafana dashboards for delivery visibility. Python is used for release tooling and deployment helpers.",
+    "raw_payload_ref": "samples\\gold\\devops-engineer-001.txt"
+  },
+  "normalized": {
+    "document_id": "manual:devops-engineer-001",
+    "title_normalized": "devops engineer",
+    "company_normalized": "harbor stack",
+    "location_normalized": "melbourne_vic",
+    "employment_type": "unknown",
+    "description_cleaned": "Mid DevOps Engineer Location: Melbourne, VIC Company: Harbor Stack We are hiring a Mid DevOps Engineer to improve CI/CD reliability across our Azure environment. You will automate Docker-based build pipelines, manage Terraform for infrastructure changes, and extend Grafana dashboards for delivery visibility. Python is used for release tooling and deployment helpers."
+  },
+  "extraction": {
+    "document_id": "manual:devops-engineer-001",
+    "facts": {
+      "cloud_platforms": [
+        "azure"
+      ],
+      "containers": [
+        "docker"
+      ],
+      "iac_tools": [
+        "terraform"
+      ],
+      "observability_tools": [
+        "grafana"
+      ],
+      "programming_languages": [
+        "python"
+      ]
+    },
+    "inferences": {
+      "role_family": "devops",
+      "seniority": "mid"
+    },
+    "evidence": {
+      "cloud_platforms": [
+        "We are hiring a Mid DevOps Engineer to improve CI/CD reliability across our Azure environment. You will automate Docker-based build pipelines, manage Terraform for infrastructure changes, and extend Grafana dashboards for delivery visibility. Python is used for release tooling and deployment helpers."
+      ],
+      "containers": [
+        "We are hiring a Mid DevOps Engineer to improve CI/CD reliability across our Azure environment. You will automate Docker-based build pipelines, manage Terraform for infrastructure changes, and extend Grafana dashboards for delivery visibility. Python is used for release tooling and deployment helpers."
+      ],
+      "iac_tools": [
+        "We are hiring a Mid DevOps Engineer to improve CI/CD reliability across our Azure environment. You will automate Docker-based build pipelines, manage Terraform for infrastructure changes, and extend Grafana dashboards for delivery visibility. Python is used for release tooling and deployment helpers."
+      ],
+      "observability_tools": [
+        "We are hiring a Mid DevOps Engineer to improve CI/CD reliability across our Azure environment. You will automate Docker-based build pipelines, manage Terraform for infrastructure changes, and extend Grafana dashboards for delivery visibility. Python is used for release tooling and deployment helpers."
+      ],
+      "programming_languages": [
+        "We are hiring a Mid DevOps Engineer to improve CI/CD reliability across our Azure environment. You will automate Docker-based build pipelines, manage Terraform for infrastructure changes, and extend Grafana dashboards for delivery visibility. Python is used for release tooling and deployment helpers."
+      ],
+      "role_family": [
+        "Mid DevOps Engineer"
+      ],
+      "seniority": [
+        "Mid DevOps Engineer"
+      ]
+    },
+    "extractor_version": "v1-rules-baseline",
+    "taxonomy_version": "v1"
+  }
+}
