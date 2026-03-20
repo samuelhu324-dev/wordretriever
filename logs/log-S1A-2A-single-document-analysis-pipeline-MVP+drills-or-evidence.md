@@ -5,7 +5,7 @@
 **id**: `S1A-2A`
 **kind**: `log`
 **title**: `single-document analysis pipeline MVP + drills/evidence + v1`
-**status**: `draft`
+**status**: `stable`
 **scope**: `S1`
 **tags**: `EVOLUTION, jd-analysis, Drills, Evidence, epic/S1, sub/S1A-2A`
 **links**: ``
@@ -314,6 +314,42 @@
 - 这条 evidence 能把输入样本、输出工件、实现版本和 PASS/FAIL 结果收口到同一条可追溯记录中。
 - 下一步进入 `P3-C1-S2`，收口 phase 2 的稳定边界并写出 handoff。
 
+## P3-C1-S2 Deliverable (Phase 2 closure and handoff | v1)
+
+### Frozen phase-2 boundary
+
+- phase 2 到此明确冻结为“单文档 analysis pipeline MVP”，稳定范围包括：
+  - Python CLI 入口 `wordretriever.cli`
+  - 单文档输入支持：`text` / `json` / `csv`
+  - `source -> normalized -> extraction` 三段处理链路
+  - 基于 `rules-first` 的 facts / inferences / evidence 输出
+  - 最少 1 条可追溯 drill evidence JSON
+- phase 2 不再继续承接以下事项：
+  - 多文档批处理编排
+  - gold set / regression harness
+  - CSV export / batch import workflow
+  - dashboard、前端或服务化封装
+
+### What phase 2 has proven
+
+- 已证明 frozen contracts 可以落成真实可运行实现，而不是只停留在 schema 文档层。
+- 已证明单条受控 JD 样本可以稳定生成带版本字段和 evidence 的 extraction artifact。
+- 已证明 text loader 与 evidence 口径可以通过 drill-review-fix 的闭环被修正并重新验证。
+
+### Handoff to S1A-3A
+
+- `S1A-3A` 应承接：
+  - 最小 gold set 与 evaluation 规则
+  - 批量 import/export 的 MVP 面
+  - 面向使用者的最小交付入口，例如统一脚本或批量运行方式
+- `S1A-3A` 不应回头修改 `S1A-2A` 已冻结的 phase 边界，除非发现真正的 contract 级缺陷。
+
+### Phase 2 closure outcome
+
+- `S1A-2A` 已完成从 defaults -> implementation -> drill -> evidence -> closure 的完整闭环。
+- 本 phase 现在可视为 `stable`，后续只接受必要缺陷修正，不再承接新范围扩张。
+- 下一步应创建并推进 `S1A-3A`，把 MVP 从“单文档可运行”推进到“最小可评估、可批量输入输出、可交付”。
+
 ### P2 (Drill / Verify)
 
 - `P2-C1-S1`: 用 1 条受控样本跑通 pipeline 并生成 extraction JSON。
@@ -346,7 +382,7 @@
 ### P3 (Evidence / closure)
 
 - [x] `P3-C1-S1`: Record single-document pipeline evidence JSON
-- [ ] `P3-C1-S2`: Freeze phase outputs and handoff to batch-oriented phase
+- [x] `P3-C1-S2`: Freeze phase outputs and handoff to batch-oriented phase
 
 ## Evidence (reserved)
 
@@ -372,8 +408,25 @@
   - Source metadata for `company` and `location` is now lifted from text headers for this controlled sample.
   - Evidence snippets now prefer original text lines rather than canonical labels.
 
+### P3-C1-S2 (Phase 2 closure | 2026-03-20)
+
+- headSha: `1256e44e685d2d99eb1a9bb50f47e13dc2163622`
+- artifacts:
+  - `artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`
+  - `artifacts/_tmp_single_doc_pipeline/drills_20260320T042336Z.json`
+- passFail:
+  - `PASS`
+- expected:
+  - Phase 2 should finish with a stable single-document pipeline boundary and a clear handoff to the next phase.
+  - No new scope should be silently added to the single-document MVP after closure.
+- observed:
+  - Phase 2 boundary is frozen around CLI-first single-document processing plus evidence output.
+  - Core deliverables, drill artifact, and evidence JSON are all traceable in the current branch history.
+  - Follow-up work is explicitly handed to `S1A-3A` rather than continuing to expand phase 2.
+
 ## Recent changes (for traceability, optional)
 
+- 2026-03-20: 完成 `S1A-2A/P3-C1-S2`，冻结 phase 2 稳定边界并写出向 `S1A-3A` 的 handoff，phase 2 标记为 stable。
 - 2026-03-20: 完成 `S1A-2A/P3-C1-S1`，记录第一条单文档 pipeline evidence JSON，并把 headSha / artifact / PASS 收口到 phase log。
 - 2026-03-20: 完成 `S1A-2A/P2-C1-S2`，基于 review 修正 text loader 元信息提取与 evidence 片段保留策略。
 - 2026-03-20: 完成 `S1A-2A/P2-C1-S1`，跑通第一条单文档 drill 并生成 extraction artifact。
