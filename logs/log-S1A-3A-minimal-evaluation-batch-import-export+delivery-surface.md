@@ -290,6 +290,47 @@
 - 后续 `P2-C1-S2` 可以在这个固定入口上补齐 CSV summary 与 batch run summary，而不需要再改入口语义。
 - 下一步应进入 `P2-C1-S2`，补全 batch JSON export、CSV 摘要与 batch summary 输出。
 
+## P2-C1-S2 Deliverable (Batch JSON export, CSV summary, and run summary | v1)
+
+### Added batch export capabilities
+
+- `wordretriever.batch_cli` 现在在每次 batch run 后额外写出：
+  - `batch-summary.json`
+  - `batch-summary.csv`
+- `src/wordretriever/batch.py` 当前已补充：
+  - `BatchRunSummary`
+  - `write_batch_summary_json(...)`
+  - `write_batch_summary_csv(...)`
+
+### Batch output set frozen for v1
+
+- phase 3 当前一次 batch run 的最小输出集合固定为：
+  - 每条输入对应的 `*.output.json`
+  - 1 份 `batch-summary.json`
+  - 1 份 `batch-summary.csv`
+- `batch-summary.json` 当前至少包含：
+  - `input_batch_ref`
+  - `input_format`
+  - `processed_count`
+  - `extractor_version`
+  - `taxonomy_version`
+  - `output_dir`
+  - `items`
+- `batch-summary.csv` 当前至少包含：
+  - `document_id`
+  - `title`
+  - `input_path`
+  - `output_path`
+  - `extractor_version`
+  - `taxonomy_version`
+
+### P2-C1-S2 outcome
+
+- phase 3 的 batch delivery 面已经从“只有逐文档 JSON”推进到“逐文档 JSON + batch summary JSON + batch summary CSV”。
+- 已用 `samples/gold/` 做导出 smoke run，确认同一批次目录内成功生成 `3` 个逐文档 JSON、`batch-summary.json` 与 `batch-summary.csv`。
+- 这意味着后续 `P3-C1-S2` 的 delivery drill 已有完整的最小交付面可验证。
+- 下一步应进入 `P3-C1-S1`，先用 gold set 跑一轮正式 evaluation drill，形成 phase 3 的第一条 evidence。
+
 ## Execution Checklist (unchecked)
 
 ### P0 (Contract)
@@ -307,7 +348,7 @@
 ### P2 (Batch import/export and delivery)
 
 - [x] `P2-C1-S1`: Fix batch CLI entrypoint and I/O layout
-- [ ] `P2-C1-S2`: Export batch JSON, CSV summary, and run summary
+- [x] `P2-C1-S2`: Export batch JSON, CSV summary, and run summary
 
 ### P3 (Drill / Evidence / closure)
 
@@ -320,6 +361,7 @@
 
 ## Recent changes (for traceability, optional)
 
+- 2026-03-20: 完成 `S1A-3A/P2-C1-S2`，补齐 `batch-summary.json` 与 `batch-summary.csv` 导出，使 batch CLI 具备完整最小交付输出集。
 - 2026-03-20: 完成 `S1A-3A/P2-C1-S1`，新增 `batch.py` 与 `batch_cli.py`，固定 batch 入口为 `wordretriever.batch_cli` 并冻结默认输出目录布局。
 - 2026-03-20: 完成 `S1A-3A/P1-C1-S2`，新增 `evaluation.py` 与 evaluation summary template，冻结 phase 3 的 summary 输出骨架。
 - 2026-03-20: 完成 `S1A-3A/P1-C1-S1`，新增最小 gold set 样本与 `gold-set-v1.json`，冻结 phase 3 evaluation 的 expected 字段格式。

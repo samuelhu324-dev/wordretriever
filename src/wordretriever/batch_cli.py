@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from .batch import run_batch_pipeline
+from .batch import run_batch_pipeline, write_batch_summary_csv, write_batch_summary_json
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -26,13 +26,19 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     parser = build_parser()
     args = parser.parse_args()
-    items = run_batch_pipeline(
+    summary = run_batch_pipeline(
         input_path=args.input_path,
         input_format=args.input_format,
         output_dir=args.output_dir,
     )
+    summary_json_path = Path(args.output_dir) / "batch-summary.json"
+    summary_csv_path = Path(args.output_dir) / "batch-summary.csv"
+    write_batch_summary_json(summary, str(summary_json_path))
+    write_batch_summary_csv(summary, str(summary_csv_path))
     print(f"Batch outputs written to {Path(args.output_dir)}")
-    print(f"Processed {len(items)} input(s)")
+    print(f"Processed {summary.processed_count} input(s)")
+    print(f"Batch summary JSON written to {summary_json_path}")
+    print(f"Batch summary CSV written to {summary_csv_path}")
     return 0
 
 
