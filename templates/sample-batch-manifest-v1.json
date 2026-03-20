@@ -1,0 +1,23 @@
+{
+  "batch_id": "20260320T000000Z",
+  "created_at": "2026-03-20T00:00:00Z",
+  "stage": "intake",
+  "sample_count": 2,
+  "input_dir": "samples/intake",
+  "items": [
+    {
+      "sample_id": "intake:platform-engineer-003",
+      "input_path": "samples/intake/platform-engineer-003.txt",
+      "stage": "intake",
+      "source_type": "job_posting",
+      "notes": []
+    },
+    {
+      "sample_id": "intake:devops-engineer-002",
+      "input_path": "samples/intake/devops-engineer-002.txt",
+      "stage": "intake",
+      "source_type": "job_posting",
+      "notes": []
+    }
+  ]
+}
