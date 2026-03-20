@@ -1,0 +1,37 @@
+{
+  "id": "S1A-2A/P3-C1-S1",
+  "phase": "S1A-2A",
+  "recordedAt": "2026-03-20T04:23:36Z",
+  "headSha": "1cddaf20314c654a3a3a00a5b75f20d3c9e6038f",
+  "inputSampleId": "manual:platform-engineer-002",
+  "inputPath": "samples/manual/platform-engineer-002.txt",
+  "artifactPaths": [
+    "artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json",
+    "artifacts/_tmp_single_doc_pipeline/drills_20260320T042336Z.json"
+  ],
+  "extractorVersion": "v1-rules-baseline",
+  "taxonomyVersion": "v1",
+  "passFail": "PASS",
+  "checks": [
+    {
+      "name": "pipeline_output_exists",
+      "result": "PASS"
+    },
+    {
+      "name": "source_metadata_lifted_from_text_header",
+      "result": "PASS"
+    },
+    {
+      "name": "inferences_remain_outside_normalized_layer",
+      "result": "PASS"
+    },
+    {
+      "name": "evidence_prefers_original_text_snippets",
+      "result": "PASS"
+    }
+  ],
+  "notes": [
+    "Controlled single-document sample was rerun after P2-C1-S2 corrections.",
+    "Output artifact retains document_id, extractor_version, taxonomy_version, facts, inferences, and evidence fields."
+  ]
+}

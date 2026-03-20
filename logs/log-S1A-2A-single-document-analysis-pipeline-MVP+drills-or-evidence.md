@@ -16,7 +16,7 @@
   **previous_log**: `logs/log-S1A-1A-analysis-first-MVP-contracts+taxonomy+drills-or-evidence.md`
   **reference_log_1**: `logs/_plan.md`
 **created**: `2026-03-19`
-**updated**: `2026-03-19`
+**updated**: `2026-03-20`
 
 ---
 
@@ -292,6 +292,28 @@
 - 当前输出已更贴近 `S1A-1A` 的 frozen contracts 与 evidence 口径。
 - `P2-C1-S2` 通过，phase 2 可以进入 `P3-C1-S1` 的 evidence 记录收口。
 
+## P3-C1-S1 Deliverable (Single-document pipeline evidence JSON | v1)
+
+### Evidence artifact recorded
+
+- evidence JSON：`artifacts/_tmp_single_doc_pipeline/drills_20260320T042336Z.json`
+- output artifact：`artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`
+- headSha：`1cddaf20314c654a3a3a00a5b75f20d3c9e6038f`
+
+### Evidence contract fields captured
+
+- `inputSampleId = manual:platform-engineer-002`
+- `artifactPaths` 已同时记录 output artifact 与 evidence artifact 自身路径
+- `extractorVersion = v1-rules-baseline`
+- `taxonomyVersion = v1`
+- `passFail = PASS`
+
+### P3-C1-S1 outcome
+
+- phase 2 的第一条 machine-readable evidence 已落盘。
+- 这条 evidence 能把输入样本、输出工件、实现版本和 PASS/FAIL 结果收口到同一条可追溯记录中。
+- 下一步进入 `P3-C1-S2`，收口 phase 2 的稳定边界并写出 handoff。
+
 ### P2 (Drill / Verify)
 
 - `P2-C1-S1`: 用 1 条受控样本跑通 pipeline 并生成 extraction JSON。
@@ -323,31 +345,36 @@
 
 ### P3 (Evidence / closure)
 
-- [ ] `P3-C1-S1`: Record single-document pipeline evidence JSON
+- [x] `P3-C1-S1`: Record single-document pipeline evidence JSON
 - [ ] `P3-C1-S2`: Freeze phase outputs and handoff to batch-oriented phase
 
 ## Evidence (reserved)
 
 - Artifacts are the source of truth for evidence; this log records the head SHA, key parameters, and artifact paths (or CI run URLs).
 
-### <Pn-Cx-Sy> (Single-document pipeline drill | 2026-03-19)
+### P3-C1-S1 (Single-document pipeline drill | 2026-03-20)
 
-- headSha: `<git sha>`
-- artifacts: `artifacts/_tmp_single_doc_pipeline/drills_<ts>.json`
+- headSha: `1cddaf20314c654a3a3a00a5b75f20d3c9e6038f`
+- artifacts: `artifacts/_tmp_single_doc_pipeline/drills_20260320T042336Z.json`
+- output artifact: `artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`
 - env (example, optional):
   - `PIPELINE_SCOPE=single_document`
   - `EXTRACTOR_VERSION=v1-rules-baseline`
+- passFail:
+  - `PASS`
 - expected:
   - One controlled JD sample can reach extraction output without breaking the frozen contracts.
   - Output artifacts retain document_id, versions, and evidence fields.
 - observed:
   - Ran `wordretriever.cli` against `samples/manual/platform-engineer-002.txt` and produced `artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`.
+  - Recorded machine-readable evidence at `artifacts/_tmp_single_doc_pipeline/drills_20260320T042336Z.json`.
   - Output retained document_id, extractor_version, taxonomy_version, and evidence fields.
-  - Text loader baseline initially missed company/location metadata and was corrected during `P2-C1-S2` review.
+  - Source metadata for `company` and `location` is now lifted from text headers for this controlled sample.
   - Evidence snippets now prefer original text lines rather than canonical labels.
 
 ## Recent changes (for traceability, optional)
 
+- 2026-03-20: 完成 `S1A-2A/P3-C1-S1`，记录第一条单文档 pipeline evidence JSON，并把 headSha / artifact / PASS 收口到 phase log。
 - 2026-03-20: 完成 `S1A-2A/P2-C1-S2`，基于 review 修正 text loader 元信息提取与 evidence 片段保留策略。
 - 2026-03-20: 完成 `S1A-2A/P2-C1-S1`，跑通第一条单文档 drill 并生成 extraction artifact。
 - 2026-03-20: 完成 `S1A-2A/P1-C1-S2` 与 `P1-C1-S3`，固定 Python CLI 入口并落下单文档 pipeline skeleton。
