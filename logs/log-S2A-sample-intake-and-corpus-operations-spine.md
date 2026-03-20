@@ -17,7 +17,7 @@
   **reference_log_1**: `logs/log-S1B-formal-usage-guardrails+reporting-spine.md`
   **reference_log_2**: `logs/log-S1A-JD-analysis-intelligence-MVP+contracts-first-spine.md`
   **phase_log_1**: `logs/log-S2A-1A-sample-intake-review-and-batch-manifest-baseline+drills-or-evidence.md`
-  **phase_log_2**: `TBD`
+  **phase_log_2**: `logs/log-S2A-2A-reviewed-promotion-and-intake-analysis+drills-or-evidence.md`
   **phase_log_3**: `TBD`
 **created**: `2026-03-20`
 **updated**: `2026-03-20`
@@ -81,8 +81,8 @@
 
 - `S2A-1A`（Phase 1）：建立样本 stage、batch manifest 与 review baseline。
   - 详见：`logs/log-S2A-1A-sample-intake-review-and-batch-manifest-baseline+drills-or-evidence.md`
-- `S2A-2A`（Phase 2）：review-to-gold-candidate promotion baseline。
-  - 详见：`TBD`
+- `S2A-2A`（Phase 2）：review-to-gold-candidate promotion baseline 与 intake analysis。
+  - 详见：`logs/log-S2A-2A-reviewed-promotion-and-intake-analysis+drills-or-evidence.md`
 - `S2A-3A`（Phase 3）：corpus expansion summary 与 taxonomy impact review。
   - 详见：`TBD`
 
@@ -95,9 +95,13 @@
 
 ## Current Status（进展摘要）
 
-- `S2A` baseline 已完成，当前 repo 已具备稳定的样本 intake 与批次记录框架。
-- 你现在可以开始持续把样本发来，我可以按固定阶段把它们整理进 corpus。
-- 下一步更自然的方向是 `S2A-2A`，也就是 review 后如何提升为 gold candidate 的规则和证据链。
+- `S2A-1A` 与 `S2A-2A` 都已完成，当前 repo 已具备样本 intake、review decision 与初步 intake analysis 能力。
+- 当前可以不只接收样本，还可以对一批样本输出 promotion decisions、role-family 分布、技能频率和组合特征。
+- 本轮 committed-head drill 已在 `81ed81f1db57dc8fd3ec3fef6a670fc856bacf4f` 上完成，正式 evidence 位于：
+  - `artifacts/_tmp_batch_delivery/intake_20260320T074500Z/`
+  - `artifacts/_tmp_review/intake-review-summary-20260320T074500Z.json`
+  - `artifacts/_tmp_reports/intake-analysis-report-20260320T074500Z.md`
+- 下一步更自然的方向不是盲目继续 intake，而是先读取这批 reviewed decisions 的技能要求与组合特征，再决定 `S2A-3A` 要补哪类样本进入 `gold_candidates`。
 
 ## Notes（落地原则，可选）
 
@@ -114,4 +118,5 @@
 
 ## Recent changes（for traceability，可选）
 
+- 2026-03-20：完成 `S2A-2A`，新增 review CLI、review summary、intake analysis report，并冻结 reviewed promotion baseline。
 - 2026-03-20：完成 `S2A-1A`，新增 sample ops CLI、样本 stage 目录、batch manifest 与 review record 模板，并通过 committed-head drill 将 `S2A` baseline 标记为 stable。
