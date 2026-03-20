@@ -180,6 +180,44 @@
 
 - `P0-C1-S1`、`P0-C1-S2`、`P0-C1-S3`、`P0-C1-S4` 视为已冻结，可直接进入 `P1`。
 
+## P1-C1-S1 Deliverable (Minimal gold set samples and expected fields | v1)
+
+### Created gold set assets
+
+- `samples/gold/platform-engineer-002.txt`
+- `samples/gold/devops-engineer-001.txt`
+- `samples/gold/sre-001.txt`
+- `samples/gold/gold-set-v1.json`
+
+### Gold set coverage
+
+- 当前最小 gold set 覆盖 3 条受控样本：
+  - `platform_engineering`
+  - `devops`
+  - `sre`
+- 每条样本都至少声明：
+  - `sample_id`
+  - `input_path`
+  - `input_format`
+  - `document_id`
+  - `expected.facts`
+  - `expected.inferences`
+  - `notes`
+
+### Expected field format frozen for v1
+
+- `expected.facts` 当前按 category -> canonical labels list 记录。
+- `expected.inferences` 当前至少包含：
+  - `role_family`
+  - `seniority`
+- v1 仍不引入复杂分数或权重，只保留后续 evaluation 所需的最小 PASS/FAIL 对照面。
+
+### P1-C1-S1 outcome
+
+- phase 3 已拥有一套可直接被后续 evaluation skeleton 消费的最小 gold set。
+- 已用当前 `S1A-2A` pipeline 对 3 条 gold 样本做快速兼容性检查，结果为 `3/3 passed`。
+- 下一步应进入 `P1-C1-S2`，把 `expected / observed / pass_fail / notes` 的 evaluation summary 骨架固定下来。
+
 ## Execution Checklist (unchecked)
 
 ### P0 (Contract)
@@ -191,7 +229,7 @@
 
 ### P1 (Evaluation)
 
-- [ ] `P1-C1-S1`: Define minimal gold set samples and expected fields
+- [x] `P1-C1-S1`: Define minimal gold set samples and expected fields
 - [ ] `P1-C1-S2`: Add evaluation summary skeleton
 
 ### P2 (Batch import/export and delivery)
@@ -210,4 +248,5 @@
 
 ## Recent changes (for traceability, optional)
 
+- 2026-03-20: 完成 `S1A-3A/P1-C1-S1`，新增最小 gold set 样本与 `gold-set-v1.json`，冻结 phase 3 evaluation 的 expected 字段格式。
 - 2026-03-20: 创建 `log-S1A-3A`，冻结 phase 3 的 evaluation、batch import/export 与 MVP delivery surface 默认边界。

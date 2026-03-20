@@ -1,0 +1,5 @@
+Staff Site Reliability Engineer
+Location: Brisbane, QLD
+Company: Signal Ops
+
+We need a Staff Site Reliability Engineer to improve reliability for customer-facing services on GCP. You will operate Kubernetes platforms, define SLOs and SLIs, and strengthen observability with Prometheus. Strong Go experience is preferred for automation and incident tooling.
