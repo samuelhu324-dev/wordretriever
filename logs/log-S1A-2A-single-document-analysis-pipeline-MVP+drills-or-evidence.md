@@ -5,7 +5,7 @@
 **id**: `S1A-2A`
 **kind**: `log`
 **title**: `single-document analysis pipeline MVP + drills/evidence + v1`
-**status**: `draft`
+**status**: `stable`
 **scope**: `S1`
 **tags**: `EVOLUTION, jd-analysis, Drills, Evidence, epic/S1, sub/S1A-2A`
 **links**: ``
@@ -16,7 +16,7 @@
   **previous_log**: `logs/log-S1A-1A-analysis-first-MVP-contracts+taxonomy+drills-or-evidence.md`
   **reference_log_1**: `logs/_plan.md`
 **created**: `2026-03-19`
-**updated**: `2026-03-19`
+**updated**: `2026-03-20`
 
 ---
 
@@ -131,6 +131,225 @@
 - `P1-C1-S2`: 选定 Python CLI 作为单文档 pipeline 入口。
 - `P1-C1-S3`: 设计 source loader、normalized mapper、rules extractor 的最小骨架。
 
+## P0 Deliverable (Implementation defaults frozen | v1)
+
+### P0 outcome summary
+
+- 本 phase 的默认实现语言冻结为 Python。
+- 单文档 pipeline 的最小工程布局冻结为：
+  - `src/wordretriever/`
+  - `samples/manual/`
+  - `artifacts/_tmp_single_doc_pipeline/`
+- 输入路径、样本路径、artifacts 路径彼此分离，避免 phase 2 的实现工件与受控样本混在一起。
+- 本 phase 继续复用 `S1A-1A` 的 source / normalized / extraction / evidence contract，不新增并行 schema。
+
+### P0 frozen defaults for implementation
+
+- 入口语言：Python
+- 入口风格：CLI-first
+- 受控样本位置：`samples/manual/`
+- phase 2 临时工件位置：`artifacts/_tmp_single_doc_pipeline/`
+- 实现包根位置：`src/wordretriever/`
+
+### P0 outcome
+
+- `P0-C1-S1`、`P0-C1-S2`、`P0-C1-S3` 视为已冻结，可直接交给 `P1` 开始落实现骨架。
+
+## P1-C1-S1 Deliverable (Minimal directory and artifact layout | v1)
+
+### Created layout
+
+- `src/wordretriever/`
+- `samples/manual/`
+- `artifacts/_tmp_single_doc_pipeline/`
+
+### Layout rationale
+
+- `src/wordretriever/`：存放 phase 2 后续的 loader、mapper、extractor 和 CLI 入口。
+- `samples/manual/`：存放受控手工样本，作为单文档 drill 的输入源。
+- `artifacts/_tmp_single_doc_pipeline/`：存放 phase 2 drill 产生的 JSON 工件，避免和 logs 或 source samples 混放。
+
+### P1-C1-S1 outcome
+
+- phase 2 的最小目录布局已经落盘，可直接承接下一步 CLI 入口和 pipeline skeleton。
+- 后续实现应继续在上述目录内推进，不临时新开平行目录结构。
+
+## P1-C1-S2 Deliverable (Python CLI entrypoint fixed | v1)
+
+### CLI entrypoint
+
+- 本 phase 的单文档 pipeline 入口固定为：`wordretriever.cli`
+- CLI 输入参数：
+  - `input_path`
+  - `--input-format`，支持 `text` / `json` / `csv`
+  - `--output-path`，默认写入 `artifacts/_tmp_single_doc_pipeline/latest_output.json`
+
+### CLI usage contract
+
+- 入口职责：
+  - 接收单条输入文件路径
+  - 调用 pipeline 运行 source -> normalized -> extraction
+  - 把结果写成 JSON artifact
+- 默认受控样本：`samples/manual/platform-engineer-002.txt`
+- 当前实现约定：先支持单条输入，不在 CLI 层做批量调度。
+
+### P1-C1-S2 outcome
+
+- Python CLI 入口已经固定，后续实现与 drill 都应围绕该入口推进。
+- phase 2 后续无需再讨论入口形式，直接在 `wordretriever.cli` 上迭代。
+
+## P1-C1-S3 Deliverable (Pipeline skeleton | v1)
+
+### Implemented skeleton modules
+
+- `src/wordretriever/contracts.py`
+- `src/wordretriever/loader.py`
+- `src/wordretriever/normalize.py`
+- `src/wordretriever/extract.py`
+- `src/wordretriever/pipeline.py`
+- `src/wordretriever/cli.py`
+- `samples/manual/platform-engineer-002.txt`
+
+### Skeleton responsibilities
+
+- `contracts.py`：定义 source、normalized、extraction、pipeline result 的最小数据结构。
+- `loader.py`：支持从 `text` / `json` / `csv` 加载单条 source document。
+- `normalize.py`：执行最小 title/company/location 清洗与 employment type 推断。
+- `extract.py`：按 rules-first 方式抽取 facts，并做 role family / seniority 的最小 inference。
+- `pipeline.py`：串联 loader、mapper、extractor，并提供 JSON 输出写入函数。
+- `cli.py`：固定单文档 pipeline 的运行入口。
+
+### P1-C1-S3 outcome
+
+- 单文档 pipeline 的最小实现骨架已经存在，可直接进入受控样本 drill。
+- 下一步应进入 `P2-C1-S1`，用 `samples/manual/platform-engineer-002.txt` 跑出第一份 extraction artifact。
+
+## P2-C1-S1 Deliverable (Single-document drill run | v1)
+
+### Drill input
+
+- 输入样本：`samples/manual/platform-engineer-002.txt`
+- CLI 入口：`wordretriever.cli`
+- 输入格式：`text`
+- 输出工件：`artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`
+
+### Drill result summary
+
+- pipeline 已成功跑通 source -> normalized -> extraction 三段链路。
+- 已生成第一份单文档 extraction artifact。
+- artifact 包含：
+  - `source`
+  - `normalized`
+  - `extraction`
+- extraction 结果已包含：
+  - `facts.cloud_platforms = ["aws"]`
+  - `facts.containers = ["kubernetes"]`
+  - `facts.iac_tools = ["terraform"]`
+  - `facts.observability_tools = ["datadog", "prometheus"]`
+  - `facts.programming_languages = ["python", "go"]`
+  - `inferences.role_family = "platform_engineering"`
+  - `inferences.seniority = "senior"`
+
+### Drill observations
+
+- 当前受控样本使用 `text` loader 路径，title 能被捕获，但 `company` 与 `location` 仍为 `null`。
+- 这说明 CLI 和 pipeline 已可执行，但 text loader 还没有从正文前几行里提取 `Location:` / `Company:` 元信息。
+- 对 `P2-C1-S1` 来说，这不是阻断项，因为单文档 pipeline 已经真正跑通；但它会成为 `P2-C1-S2` review 的重点之一。
+
+### P2-C1-S1 outcome
+
+- `S1A-2A` 的第一条单文档 drill 已完成。
+- phase 2 已从“只有骨架”进入“可运行并产出 artifact”的状态。
+- 下一步应进入 `P2-C1-S2`，对照 `S1A-1A` 的 frozen contracts 检查输出是否需要修正。
+
+## P2-C1-S2 Deliverable (Output review against frozen contracts | v1)
+
+### Review scope
+
+- 对照 `S1A-1A` 的 source / normalized / extraction contract 做本次 artifact review。
+- 对照 facts vs inferences review rules 检查输出语义是否漂移。
+- 对照 taxonomy coverage 检查当前 extraction 是否落在允许的 canonical labels 内。
+
+### Review findings
+
+- 合格项：
+  - artifact 已包含 `source`、`normalized`、`extraction` 三层结构。
+  - `document_id`、`extractor_version`、`taxonomy_version` 已保留。
+  - facts 的 canonical labels 落在 `S1A-1A` 已冻结的 taxonomy 范围内。
+  - `role_family` 与 `seniority` 仍然留在 `inferences`，没有污染 normalized 层。
+- 发现的问题：
+  - text loader 初版没有从头部 `Location:` / `Company:` 元信息提取 source 字段。
+  - inference/fact evidence 初版更偏向 canonical label 回填，而不是优先保留原文片段。
+
+### Review actions taken
+
+- 已修正 text loader：从手工文本头部提取 `Company:` 和 `Location:`。
+- 已修正 extractor evidence：优先记录原文行片段，而不是 canonical label 自身。
+- 已重新运行 `samples/manual/platform-engineer-002.txt`，刷新 artifact 输出。
+
+### Review outcome
+
+- 当前输出已更贴近 `S1A-1A` 的 frozen contracts 与 evidence 口径。
+- `P2-C1-S2` 通过，phase 2 可以进入 `P3-C1-S1` 的 evidence 记录收口。
+
+## P3-C1-S1 Deliverable (Single-document pipeline evidence JSON | v1)
+
+### Evidence artifact recorded
+
+- evidence JSON：`artifacts/_tmp_single_doc_pipeline/drills_20260320T042336Z.json`
+- output artifact：`artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`
+- headSha：`1cddaf20314c654a3a3a00a5b75f20d3c9e6038f`
+
+### Evidence contract fields captured
+
+- `inputSampleId = manual:platform-engineer-002`
+- `artifactPaths` 已同时记录 output artifact 与 evidence artifact 自身路径
+- `extractorVersion = v1-rules-baseline`
+- `taxonomyVersion = v1`
+- `passFail = PASS`
+
+### P3-C1-S1 outcome
+
+- phase 2 的第一条 machine-readable evidence 已落盘。
+- 这条 evidence 能把输入样本、输出工件、实现版本和 PASS/FAIL 结果收口到同一条可追溯记录中。
+- 下一步进入 `P3-C1-S2`，收口 phase 2 的稳定边界并写出 handoff。
+
+## P3-C1-S2 Deliverable (Phase 2 closure and handoff | v1)
+
+### Frozen phase-2 boundary
+
+- phase 2 到此明确冻结为“单文档 analysis pipeline MVP”，稳定范围包括：
+  - Python CLI 入口 `wordretriever.cli`
+  - 单文档输入支持：`text` / `json` / `csv`
+  - `source -> normalized -> extraction` 三段处理链路
+  - 基于 `rules-first` 的 facts / inferences / evidence 输出
+  - 最少 1 条可追溯 drill evidence JSON
+- phase 2 不再继续承接以下事项：
+  - 多文档批处理编排
+  - gold set / regression harness
+  - CSV export / batch import workflow
+  - dashboard、前端或服务化封装
+
+### What phase 2 has proven
+
+- 已证明 frozen contracts 可以落成真实可运行实现，而不是只停留在 schema 文档层。
+- 已证明单条受控 JD 样本可以稳定生成带版本字段和 evidence 的 extraction artifact。
+- 已证明 text loader 与 evidence 口径可以通过 drill-review-fix 的闭环被修正并重新验证。
+
+### Handoff to S1A-3A
+
+- `S1A-3A` 应承接：
+  - 最小 gold set 与 evaluation 规则
+  - 批量 import/export 的 MVP 面
+  - 面向使用者的最小交付入口，例如统一脚本或批量运行方式
+- `S1A-3A` 不应回头修改 `S1A-2A` 已冻结的 phase 边界，除非发现真正的 contract 级缺陷。
+
+### Phase 2 closure outcome
+
+- `S1A-2A` 已完成从 defaults -> implementation -> drill -> evidence -> closure 的完整闭环。
+- 本 phase 现在可视为 `stable`，后续只接受必要缺陷修正，不再承接新范围扩张。
+- 下一步应创建并推进 `S1A-3A`，把 MVP 从“单文档可运行”推进到“最小可评估、可批量输入输出、可交付”。
+
 ### P2 (Drill / Verify)
 
 - `P2-C1-S1`: 用 1 条受控样本跑通 pipeline 并生成 extraction JSON。
@@ -145,43 +364,72 @@
 
 ### P0 (Contract)
 
-- [ ] `P0-C1-S1`: Implementation entrypoint and layout | v1
-- [ ] `P0-C1-S2`: Input and output contract binding | v1
-- [ ] `P0-C1-S3`: Evidence contract reuse | v1
+- [x] `P0-C1-S1`: Implementation entrypoint and layout | v1
+- [x] `P0-C1-S2`: Input and output contract binding | v1
+- [x] `P0-C1-S3`: Evidence contract reuse | v1
 
 ### P1 (Implementation)
 
-- [ ] `P1-C1-S1`: Define minimal directory and artifact layout
-- [ ] `P1-C1-S2`: Fix Python CLI as pipeline entrypoint
-- [ ] `P1-C1-S3`: Draft pipeline skeleton for loader, mapper, and extractor
+- [x] `P1-C1-S1`: Define minimal directory and artifact layout
+- [x] `P1-C1-S2`: Fix Python CLI as pipeline entrypoint
+- [x] `P1-C1-S3`: Draft pipeline skeleton for loader, mapper, and extractor
 
 ### P2 (Drill / Verify)
 
-- [ ] `P2-C1-S1`: Run one controlled sample through the pipeline
-- [ ] `P2-C1-S2`: Review output against frozen contracts
+- [x] `P2-C1-S1`: Run one controlled sample through the pipeline
+- [x] `P2-C1-S2`: Review output against frozen contracts
 
 ### P3 (Evidence / closure)
 
-- [ ] `P3-C1-S1`: Record single-document pipeline evidence JSON
-- [ ] `P3-C1-S2`: Freeze phase outputs and handoff to batch-oriented phase
+- [x] `P3-C1-S1`: Record single-document pipeline evidence JSON
+- [x] `P3-C1-S2`: Freeze phase outputs and handoff to batch-oriented phase
 
 ## Evidence (reserved)
 
 - Artifacts are the source of truth for evidence; this log records the head SHA, key parameters, and artifact paths (or CI run URLs).
 
-### <Pn-Cx-Sy> (Single-document pipeline drill | 2026-03-19)
+### P3-C1-S1 (Single-document pipeline drill | 2026-03-20)
 
-- headSha: `<git sha>`
-- artifacts: `artifacts/_tmp_single_doc_pipeline/drills_<ts>.json`
+- headSha: `1cddaf20314c654a3a3a00a5b75f20d3c9e6038f`
+- artifacts: `artifacts/_tmp_single_doc_pipeline/drills_20260320T042336Z.json`
+- output artifact: `artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`
 - env (example, optional):
   - `PIPELINE_SCOPE=single_document`
   - `EXTRACTOR_VERSION=v1-rules-baseline`
+- passFail:
+  - `PASS`
 - expected:
   - One controlled JD sample can reach extraction output without breaking the frozen contracts.
   - Output artifacts retain document_id, versions, and evidence fields.
 - observed:
-  - Pending first implementation drill.
+  - Ran `wordretriever.cli` against `samples/manual/platform-engineer-002.txt` and produced `artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`.
+  - Recorded machine-readable evidence at `artifacts/_tmp_single_doc_pipeline/drills_20260320T042336Z.json`.
+  - Output retained document_id, extractor_version, taxonomy_version, and evidence fields.
+  - Source metadata for `company` and `location` is now lifted from text headers for this controlled sample.
+  - Evidence snippets now prefer original text lines rather than canonical labels.
+
+### P3-C1-S2 (Phase 2 closure | 2026-03-20)
+
+- headSha: `1256e44e685d2d99eb1a9bb50f47e13dc2163622`
+- artifacts:
+  - `artifacts/_tmp_single_doc_pipeline/platform-engineer-002.output.json`
+  - `artifacts/_tmp_single_doc_pipeline/drills_20260320T042336Z.json`
+- passFail:
+  - `PASS`
+- expected:
+  - Phase 2 should finish with a stable single-document pipeline boundary and a clear handoff to the next phase.
+  - No new scope should be silently added to the single-document MVP after closure.
+- observed:
+  - Phase 2 boundary is frozen around CLI-first single-document processing plus evidence output.
+  - Core deliverables, drill artifact, and evidence JSON are all traceable in the current branch history.
+  - Follow-up work is explicitly handed to `S1A-3A` rather than continuing to expand phase 2.
 
 ## Recent changes (for traceability, optional)
 
+- 2026-03-20: 完成 `S1A-2A/P3-C1-S2`，冻结 phase 2 稳定边界并写出向 `S1A-3A` 的 handoff，phase 2 标记为 stable。
+- 2026-03-20: 完成 `S1A-2A/P3-C1-S1`，记录第一条单文档 pipeline evidence JSON，并把 headSha / artifact / PASS 收口到 phase log。
+- 2026-03-20: 完成 `S1A-2A/P2-C1-S2`，基于 review 修正 text loader 元信息提取与 evidence 片段保留策略。
+- 2026-03-20: 完成 `S1A-2A/P2-C1-S1`，跑通第一条单文档 drill 并生成 extraction artifact。
+- 2026-03-20: 完成 `S1A-2A/P1-C1-S2` 与 `P1-C1-S3`，固定 Python CLI 入口并落下单文档 pipeline skeleton。
+- 2026-03-19: 完成 `S1A-2A/P0-C1-S1S3` 与 `P1-C1-S1`，冻结 phase 2 默认实现布局并创建最小目录结构。
 - 2026-03-19: 创建 `log-S1A-2A`，把第二阶段固定为单文档 analysis pipeline MVP 的实现准备与 drill/evidence 记录。
