@@ -1,0 +1,23 @@
+{
+  "id": "S1A-3A/P3-C1-S1",
+  "phase": "S1A-3A",
+  "recordedAt": "2026-03-20T04:58:00Z",
+  "headSha": "9b588497c1231221e573592555c4c688bc043920",
+  "goldSetRef": "samples/gold/gold-set-v1.json",
+  "samplesChecked": 3,
+  "summaryCounts": {
+    "PASS": 3,
+    "FAIL": 0
+  },
+  "extractorVersion": "v1-rules-baseline",
+  "taxonomyVersion": "v1",
+  "artifactPaths": [
+    "artifacts/_tmp_eval/evaluation-summary-20260320T045800Z.json",
+    "artifacts/_tmp_eval/drills_20260320T045800Z.json"
+  ],
+  "passFail": "PASS",
+  "notes": [
+    "Gold set evaluation completed against three controlled samples.",
+    "All expected facts and inferences matched observed output."
+  ]
+}

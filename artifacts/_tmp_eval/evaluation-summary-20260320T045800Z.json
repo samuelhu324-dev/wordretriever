@@ -1,0 +1,174 @@
+{
+  "gold_set_ref": "samples/gold/gold-set-v1.json",
+  "samples_checked": 3,
+  "summary_counts": {
+    "PASS": 3,
+    "FAIL": 0
+  },
+  "extractor_version": "v1-rules-baseline",
+  "taxonomy_version": "v1",
+  "results": [
+    {
+      "sample_id": "gold:platform-engineer-002",
+      "document_id": "manual:platform-engineer-002",
+      "expected": {
+        "facts": {
+          "cloud_platforms": [
+            "aws"
+          ],
+          "containers": [
+            "kubernetes"
+          ],
+          "iac_tools": [
+            "terraform"
+          ],
+          "observability_tools": [
+            "datadog",
+            "prometheus"
+          ],
+          "programming_languages": [
+            "python",
+            "go"
+          ]
+        },
+        "inferences": {
+          "role_family": "platform_engineering",
+          "seniority": "senior"
+        }
+      },
+      "observed": {
+        "facts": {
+          "cloud_platforms": [
+            "aws"
+          ],
+          "containers": [
+            "kubernetes"
+          ],
+          "iac_tools": [
+            "terraform"
+          ],
+          "observability_tools": [
+            "datadog",
+            "prometheus"
+          ],
+          "programming_languages": [
+            "python",
+            "go"
+          ]
+        },
+        "inferences": {
+          "role_family": "platform_engineering",
+          "seniority": "senior"
+        },
+        "extractor_version": "v1-rules-baseline",
+        "taxonomy_version": "v1"
+      },
+      "pass_fail": "PASS",
+      "notes": []
+    },
+    {
+      "sample_id": "gold:devops-engineer-001",
+      "document_id": "manual:devops-engineer-001",
+      "expected": {
+        "facts": {
+          "cloud_platforms": [
+            "azure"
+          ],
+          "containers": [
+            "docker"
+          ],
+          "iac_tools": [
+            "terraform"
+          ],
+          "observability_tools": [
+            "grafana"
+          ],
+          "programming_languages": [
+            "python"
+          ]
+        },
+        "inferences": {
+          "role_family": "devops",
+          "seniority": "mid"
+        }
+      },
+      "observed": {
+        "facts": {
+          "cloud_platforms": [
+            "azure"
+          ],
+          "containers": [
+            "docker"
+          ],
+          "iac_tools": [
+            "terraform"
+          ],
+          "observability_tools": [
+            "grafana"
+          ],
+          "programming_languages": [
+            "python"
+          ]
+        },
+        "inferences": {
+          "role_family": "devops",
+          "seniority": "mid"
+        },
+        "extractor_version": "v1-rules-baseline",
+        "taxonomy_version": "v1"
+      },
+      "pass_fail": "PASS",
+      "notes": []
+    },
+    {
+      "sample_id": "gold:sre-001",
+      "document_id": "manual:sre-001",
+      "expected": {
+        "facts": {
+          "cloud_platforms": [
+            "gcp"
+          ],
+          "containers": [
+            "kubernetes"
+          ],
+          "iac_tools": [],
+          "observability_tools": [
+            "prometheus"
+          ],
+          "programming_languages": [
+            "go"
+          ]
+        },
+        "inferences": {
+          "role_family": "sre",
+          "seniority": "staff"
+        }
+      },
+      "observed": {
+        "facts": {
+          "cloud_platforms": [
+            "gcp"
+          ],
+          "containers": [
+            "kubernetes"
+          ],
+          "iac_tools": [],
+          "observability_tools": [
+            "prometheus"
+          ],
+          "programming_languages": [
+            "go"
+          ]
+        },
+        "inferences": {
+          "role_family": "sre",
+          "seniority": "staff"
+        },
+        "extractor_version": "v1-rules-baseline",
+        "taxonomy_version": "v1"
+      },
+      "pass_fail": "PASS",
+      "notes": []
+    }
+  ]
+}

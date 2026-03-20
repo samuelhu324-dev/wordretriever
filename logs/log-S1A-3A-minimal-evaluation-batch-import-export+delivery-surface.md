@@ -5,7 +5,7 @@
 **id**: `S1A-3A`
 **kind**: `log`
 **title**: `minimal evaluation + batch import/export + MVP delivery surface + drills/evidence + v1`
-**status**: `draft`
+**status**: `stable`
 **scope**: `S1`
 **tags**: `EVOLUTION, jd-analysis, Drills, Evidence, epic/S1, sub/S1A-3A`
 **links**: ``
@@ -331,6 +331,44 @@
 - 这意味着后续 `P3-C1-S2` 的 delivery drill 已有完整的最小交付面可验证。
 - 下一步应进入 `P3-C1-S1`，先用 gold set 跑一轮正式 evaluation drill，形成 phase 3 的第一条 evidence。
 
+## P3-C1-S1 Deliverable (Evaluation drill evidence | v1)
+
+### Evaluation drill artifacts
+
+- evaluation summary：`artifacts/_tmp_eval/evaluation-summary-20260320T045800Z.json`
+- evaluation evidence：`artifacts/_tmp_eval/drills_20260320T045800Z.json`
+- headSha：`9b588497c1231221e573592555c4c688bc043920`
+
+### Evaluation drill outcome
+
+- 本轮使用 `samples/gold/gold-set-v1.json` 跑正式 evaluation drill。
+- `samples_checked = 3`
+- `summary_counts = { PASS: 3, FAIL: 0 }`
+- phase 3 的第一条 evaluation evidence 已落盘，可直接回溯到 gold set、summary output 与实现版本。
+
+## P3-C1-S2 Deliverable (Batch delivery drill and phase closure | v1)
+
+### Batch delivery drill artifacts
+
+- batch output dir：`artifacts/_tmp_batch_delivery/drill_20260320T045800Z/`
+- batch evidence：`artifacts/_tmp_batch_delivery/drills_20260320T045800Z.json`
+- headSha：`9b588497c1231221e573592555c4c688bc043920`
+
+### Batch delivery drill outcome
+
+- 本轮使用 `samples/gold/` 跑正式 batch delivery drill。
+- 成功生成：
+  - `3` 个逐文档 JSON
+  - `batch-summary.json`
+  - `batch-summary.csv`
+- 这证明 phase 3 的 batch delivery surface 已经可以被真实运行和验证。
+
+### Phase 3 closure outcome
+
+- `S1A-3A` 已完成从 defaults -> evaluation skeleton -> batch delivery -> drills -> evidence -> closure 的完整闭环。
+- 本 phase 现在可视为 `stable`，后续只接受必要缺陷修正，不再继续扩张 phase 3 范围。
+- `S1A` 的三阶段 MVP 闭环现已全部完成：contracts、single-document pipeline、evaluation/batch delivery 三条主线都已有证据链支撑。
+
 ## Execution Checklist (unchecked)
 
 ### P0 (Contract)
@@ -352,15 +390,50 @@
 
 ### P3 (Drill / Evidence / closure)
 
-- [ ] `P3-C1-S1`: Run one minimal evaluation drill with gold samples
-- [ ] `P3-C1-S2`: Run one minimal batch delivery drill and close phase 3
+- [x] `P3-C1-S1`: Run one minimal evaluation drill with gold samples
+- [x] `P3-C1-S2`: Run one minimal batch delivery drill and close phase 3
 
 ## Evidence (reserved)
 
 - Artifacts are the source of truth for evidence; this log records the head SHA, key parameters, and artifact paths (or CI run URLs).
 
+### P3-C1-S1 (Evaluation drill | 2026-03-20)
+
+- headSha: `9b588497c1231221e573592555c4c688bc043920`
+- artifacts:
+  - `artifacts/_tmp_eval/evaluation-summary-20260320T045800Z.json`
+  - `artifacts/_tmp_eval/drills_20260320T045800Z.json`
+- passFail:
+  - `PASS`
+- expected:
+  - Gold set evaluation should produce a machine-readable summary with zero mismatches for the controlled v1 samples.
+  - Evidence should preserve the gold set reference, sample counts, summary counts, and versions.
+- observed:
+  - Evaluation summary processed `3` samples and returned `PASS=3`, `FAIL=0`.
+  - Evidence JSON captured `goldSetRef`, `samplesChecked`, `summaryCounts`, `extractorVersion`, and `taxonomyVersion`.
+
+### P3-C1-S2 (Batch delivery drill | 2026-03-20)
+
+- headSha: `9b588497c1231221e573592555c4c688bc043920`
+- artifacts:
+  - `artifacts/_tmp_batch_delivery/drill_20260320T045800Z/batch-summary.json`
+  - `artifacts/_tmp_batch_delivery/drill_20260320T045800Z/batch-summary.csv`
+  - `artifacts/_tmp_batch_delivery/drill_20260320T045800Z/devops-engineer-001.output.json`
+  - `artifacts/_tmp_batch_delivery/drill_20260320T045800Z/platform-engineer-002.output.json`
+  - `artifacts/_tmp_batch_delivery/drill_20260320T045800Z/sre-001.output.json`
+  - `artifacts/_tmp_batch_delivery/drills_20260320T045800Z.json`
+- passFail:
+  - `PASS`
+- expected:
+  - Batch delivery drill should generate per-document JSON outputs plus one batch summary JSON and one batch summary CSV.
+  - Evidence should capture the input batch reference, processed count, versions, and output artifact paths.
+- observed:
+  - Batch CLI processed `3` inputs from `samples/gold` and wrote all expected outputs into one run directory.
+  - Evidence JSON captured `inputBatchRef`, `processedCount`, `extractorVersion`, `taxonomyVersion`, and all output paths.
+
 ## Recent changes (for traceability, optional)
 
+- 2026-03-20: 完成 `S1A-3A/P3-C1-S1` 与 `P3-C1-S2`，跑通 evaluation drill 和 batch delivery drill，形成 phase 3 evidence 链并将 `S1A-3A` 标记为 stable。
 - 2026-03-20: 完成 `S1A-3A/P2-C1-S2`，补齐 `batch-summary.json` 与 `batch-summary.csv` 导出，使 batch CLI 具备完整最小交付输出集。
 - 2026-03-20: 完成 `S1A-3A/P2-C1-S1`，新增 `batch.py` 与 `batch_cli.py`，固定 batch 入口为 `wordretriever.batch_cli` 并冻结默认输出目录布局。
 - 2026-03-20: 完成 `S1A-3A/P1-C1-S2`，新增 `evaluation.py` 与 evaluation summary template，冻结 phase 3 的 summary 输出骨架。
