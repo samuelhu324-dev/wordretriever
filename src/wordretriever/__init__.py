@@ -3,6 +3,7 @@
 __all__ = [
     "cli",
     "contracts",
+    "evaluation",
     "extract",
     "loader",
     "normalize",

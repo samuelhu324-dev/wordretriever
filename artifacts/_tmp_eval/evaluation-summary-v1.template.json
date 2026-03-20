@@ -1,0 +1,28 @@
+{
+  "gold_set_ref": "samples/gold/gold-set-v1.json",
+  "samples_checked": 0,
+  "summary_counts": {
+    "PASS": 0,
+    "FAIL": 0
+  },
+  "extractor_version": "v1-rules-baseline",
+  "taxonomy_version": "v1",
+  "results": [
+    {
+      "sample_id": "gold:<sample-id>",
+      "document_id": "manual:<document-id>",
+      "expected": {
+        "facts": {},
+        "inferences": {}
+      },
+      "observed": {
+        "facts": {},
+        "inferences": {},
+        "extractor_version": "v1-rules-baseline",
+        "taxonomy_version": "v1"
+      },
+      "pass_fail": "PASS",
+      "notes": []
+    }
+  ]
+}

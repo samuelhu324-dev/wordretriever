@@ -218,6 +218,45 @@
 - 已用当前 `S1A-2A` pipeline 对 3 条 gold 样本做快速兼容性检查，结果为 `3/3 passed`。
 - 下一步应进入 `P1-C1-S2`，把 `expected / observed / pass_fail / notes` 的 evaluation summary 骨架固定下来。
 
+## P1-C1-S2 Deliverable (Evaluation summary skeleton | v1)
+
+### Added evaluation skeleton assets
+
+- `src/wordretriever/evaluation.py`
+- `artifacts/_tmp_eval/evaluation-summary-v1.template.json`
+
+### Evaluation summary shape
+
+- summary 顶层当前固定包含：
+  - `gold_set_ref`
+  - `samples_checked`
+  - `summary_counts`
+  - `extractor_version`
+  - `taxonomy_version`
+  - `results`
+- `results[]` 中每条 sample summary 当前固定包含：
+  - `sample_id`
+  - `document_id`
+  - `expected`
+  - `observed`
+  - `pass_fail`
+  - `notes`
+
+### Skeleton responsibilities
+
+- `load_gold_set(...)`：加载 gold set JSON。
+- `pipeline_result_to_observed(...)`：把 pipeline result 折叠成 evaluation 可消费的 observed 结构。
+- `evaluate_sample(...)`：生成单条样本的 `expected / observed / pass_fail / notes` 结果。
+- `summarize_evaluations(...)`：汇总 PASS/FAIL 计数与版本字段。
+- `write_evaluation_summary(...)`：把 evaluation summary 写出到 JSON 工件。
+
+### P1-C1-S2 outcome
+
+- phase 3 现在不仅有 gold set，还有一套可直接承接 drill 的 evaluation summary 骨架。
+- 已用当前 gold set 与 `S1A-2A` pipeline 做最小 summary 生成验证，结果为 `samples_checked=3`、`PASS=3`、`FAIL=0`。
+- 后续 `P3-C1-S1` 可以直接复用这套 skeleton 跑最小 evaluation drill，而不需要再定义输出结构。
+- 下一步应进入 `P2-C1-S1` 或先做一次轻量级 skeleton 验证；按当前 phase 计划，建议继续 `P2-C1-S1` 固定 batch CLI 入口与目录约定。
+
 ## Execution Checklist (unchecked)
 
 ### P0 (Contract)
@@ -230,7 +269,7 @@
 ### P1 (Evaluation)
 
 - [x] `P1-C1-S1`: Define minimal gold set samples and expected fields
-- [ ] `P1-C1-S2`: Add evaluation summary skeleton
+- [x] `P1-C1-S2`: Add evaluation summary skeleton
 
 ### P2 (Batch import/export and delivery)
 
@@ -248,5 +287,6 @@
 
 ## Recent changes (for traceability, optional)
 
+- 2026-03-20: 完成 `S1A-3A/P1-C1-S2`，新增 `evaluation.py` 与 evaluation summary template，冻结 phase 3 的 summary 输出骨架。
 - 2026-03-20: 完成 `S1A-3A/P1-C1-S1`，新增最小 gold set 样本与 `gold-set-v1.json`，冻结 phase 3 evaluation 的 expected 字段格式。
 - 2026-03-20: 创建 `log-S1A-3A`，冻结 phase 3 的 evaluation、batch import/export 与 MVP delivery surface 默认边界。
