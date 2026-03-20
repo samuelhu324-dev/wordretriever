@@ -1,0 +1,121 @@
+{
+  "source": {
+    "document_id": "manual:Milestone-Information-Technology-Mid-Level-DevOps-Engineer",
+    "source": "manual",
+    "source_type": "job_posting",
+    "source_url": null,
+    "captured_at": "2026-03-20T06:10:43Z",
+    "title": "Mid-Level DevOps Engineer",
+    "company": "Milestone Information Technology",
+    "location": "Melbourne VIC (Hybrid)",
+    "posted_at": "Posted 21d ago",
+    "salary_text": null,
+    "work_arrangement": "hybrid",
+    "content_text": "Mid-Level DevOps Engineer\n\nMilestone Information Technology \nView all jobs\n\nMelbourne VIC (Hybrid)\nEngineering - Software (Information & Communication Technology)\nContract/Temp\nAdd expected salary to your profile for insights\nPosted 21d ago\n\u2022\nHigh application volume\n\nHow you match\nSkills and credentials from the job description\nCI/CD\n\nDeployment\n\nPipelines\n\nTerraform Configuration Management\n\nAWS Cloudformation\n\nKubernetes\n\nPrometheus Software\n\nGrafana\n\nDevSecOps\n\nSite Reliability Engineering\n\nUpload a current r\u00e9sum\u00e9 to your profile to see better matches\nWas this skills match accurate?\n\n\nHelp us match better. We match your skills and credentials based on your profile and default resum\u00e9 but we might not always get it right.\nHide all\u2060\n\nAbout the Role Milestone IT is partnering with a large blue-chip client to find a Mid-Level DevOps Engineer who is ready to take the next step. You won\u2019t just be \"fixing servers\"\u2014you\u2019ll be building automated, self-healing infrastructure.\nYou\u2019ll join an engineering culture that treats infrastructure as code (IaC) and values developers who think like operators (and vice versa).\nThe Day-to-Day\nCI/CD Mastery: Build and maintain seamless deployment pipelines to increase release velocity.\nInfrastructure as Code: Use tools like Terraform or CloudFormation to manage environments.\nCloud Orchestration: Manage containerized workloads using Kubernetes or Docker.\nMonitoring & Alerting: Proactively ensure system health using Prometheus, Grafana, or ELK stacks.\nSecurity First: Implement \"DevSecOps\" practices to keep the platform bulletproof.\nWhat You\u2019ll Bring\nExperience: 2\u20134 years in a DevOps or SRE-focused role.\nCloud Savvy: Strong hands-on experience with AWS, Azure, or GCP.\nAutomation Mindset: Proficiency in scripting (Python, Bash, or Go).\nTooling: Experience with CI tools (Jenkins, GitLab CI, or GitHub Actions) and IaC (Terraform/Ansible).\nCommunication: The ability to collaborate across dev teams to break down silos.\nThe Rewards\nCompetitive daily rate\nStructured career path toward Senior/Lead DevOps roles.\nFlexible hybrid model \nBudget for certifications (AWS/CKA) and training.\nHow to Apply Ready to hit your next milestone? Click 'Apply' or reach out to Sam Menon on 0396706682.",
+    "raw_payload_ref": "samples\\intake\\Milestone-Information-Technology-Mid-Level-DevOps-Engineer.md",
+    "employer_questions": []
+  },
+  "normalized": {
+    "document_id": "manual:Milestone-Information-Technology-Mid-Level-DevOps-Engineer",
+    "title_normalized": "mid-level devops engineer",
+    "company_normalized": "milestone information technology",
+    "location_normalized": "melbourne_vic_hybrid",
+    "employment_type": "contract",
+    "work_arrangement_normalized": "hybrid",
+    "description_cleaned": "Mid-Level DevOps Engineer Milestone Information Technology View all jobs Melbourne VIC (Hybrid) Engineering - Software (Information & Communication Technology) Contract/Temp Add expected salary to your profile for insights Posted 21d ago \u2022 High application volume How you match Skills and credentials from the job description CI/CD Deployment Pipelines Terraform Configuration Management AWS Cloudformation Kubernetes Prometheus Software Grafana DevSecOps Site Reliability Engineering Upload a current r\u00e9sum\u00e9 to your profile to see better matches Was this skills match accurate? Help us match better. We match your skills and credentials based on your profile and default resum\u00e9 but we might not always get it right. Hide all\u2060 About the Role Milestone IT is partnering with a large blue-chip client to find a Mid-Level DevOps Engineer who is ready to take the next step. You won\u2019t just be \"fixing servers\"\u2014you\u2019ll be building automated, self-healing infrastructure. You\u2019ll join an engineering culture that treats infrastructure as code (IaC) and values developers who think like operators (and vice versa). The Day-to-Day CI/CD Mastery: Build and maintain seamless deployment pipelines to increase release velocity. Infrastructure as Code: Use tools like Terraform or CloudFormation to manage environments. Cloud Orchestration: Manage containerized workloads using Kubernetes or Docker. Monitoring & Alerting: Proactively ensure system health using Prometheus, Grafana, or ELK stacks. Security First: Implement \"DevSecOps\" practices to keep the platform bulletproof. What You\u2019ll Bring Experience: 2\u20134 years in a DevOps or SRE-focused role. Cloud Savvy: Strong hands-on experience with AWS, Azure, or GCP. Automation Mindset: Proficiency in scripting (Python, Bash, or Go). Tooling: Experience with CI tools (Jenkins, GitLab CI, or GitHub Actions) and IaC (Terraform/Ansible). Communication: The ability to collaborate across dev teams to break down silos. The Rewards Competitive daily rate Structured career path toward Senior/Lead DevOps roles. Flexible hybrid model Budget for certifications (AWS/CKA) and training. How to Apply Ready to hit your next milestone? Click 'Apply' or reach out to Sam Menon on 0396706682."
+  },
+  "extraction": {
+    "document_id": "manual:Milestone-Information-Technology-Mid-Level-DevOps-Engineer",
+    "facts": {
+      "cloud_platforms": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "cloud_services": [],
+      "containers": [
+        "kubernetes",
+        "docker"
+      ],
+      "iac_tools": [
+        "terraform",
+        "cloudformation",
+        "ansible"
+      ],
+      "observability_tools": [
+        "prometheus",
+        "grafana",
+        "elk"
+      ],
+      "datastores": [],
+      "data_and_messaging": [],
+      "backend_frameworks": [],
+      "ci_cd_tools": [
+        "github_actions",
+        "gitlab_ci",
+        "jenkins"
+      ],
+      "scripting_tools": [
+        "bash"
+      ],
+      "api_and_architecture": [],
+      "programming_languages": [
+        "python",
+        "go"
+      ],
+      "work_arrangements": [
+        "hybrid"
+      ],
+      "employment_conditions": []
+    },
+    "inferences": {
+      "role_family": "devops",
+      "seniority": "mid",
+      "work_arrangement": "hybrid"
+    },
+    "evidence": {
+      "cloud_platforms": [
+        "AWS Cloudformation",
+        "Cloud Savvy: Strong hands-on experience with AWS, Azure, or GCP.",
+        "Cloud Savvy: Strong hands-on experience with AWS, Azure, or GCP."
+      ],
+      "containers": [
+        "Kubernetes",
+        "Cloud Orchestration: Manage containerized workloads using Kubernetes or Docker."
+      ],
+      "iac_tools": [
+        "Terraform Configuration Management",
+        "AWS Cloudformation",
+        "Tooling: Experience with CI tools (Jenkins, GitLab CI, or GitHub Actions) and IaC (Terraform/Ansible)."
+      ],
+      "observability_tools": [
+        "Prometheus Software",
+        "Grafana",
+        "Monitoring & Alerting: Proactively ensure system health using Prometheus, Grafana, or ELK stacks."
+      ],
+      "ci_cd_tools": [
+        "Tooling: Experience with CI tools (Jenkins, GitLab CI, or GitHub Actions) and IaC (Terraform/Ansible).",
+        "Tooling: Experience with CI tools (Jenkins, GitLab CI, or GitHub Actions) and IaC (Terraform/Ansible).",
+        "Tooling: Experience with CI tools (Jenkins, GitLab CI, or GitHub Actions) and IaC (Terraform/Ansible)."
+      ],
+      "scripting_tools": [
+        "Automation Mindset: Proficiency in scripting (Python, Bash, or Go)."
+      ],
+      "programming_languages": [
+        "Automation Mindset: Proficiency in scripting (Python, Bash, or Go).",
+        "Automation Mindset: Proficiency in scripting (Python, Bash, or Go)."
+      ],
+      "work_arrangements": [
+        "Melbourne VIC (Hybrid)"
+      ],
+      "role_family": [
+        "Mid-Level DevOps Engineer"
+      ],
+      "seniority": [
+        "Mid-Level DevOps Engineer"
+      ]
+    },
+    "extractor_version": "v2-rules-expanded",
+    "taxonomy_version": "v2"
+  }
+}

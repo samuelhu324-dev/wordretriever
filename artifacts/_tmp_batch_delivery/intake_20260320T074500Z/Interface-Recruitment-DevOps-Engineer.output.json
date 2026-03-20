@@ -1,0 +1,107 @@
+{
+  "source": {
+    "document_id": "manual:Interface-Recruitment-DevOps-Engineer",
+    "source": "manual",
+    "source_type": "job_posting",
+    "source_url": null,
+    "captured_at": "2026-03-20T06:10:43Z",
+    "title": "DevOps Engineer",
+    "company": "Interface Recruitment",
+    "location": "Melbourne VIC",
+    "posted_at": "Posted 2h ago",
+    "salary_text": "$800-1000/day negotiable",
+    "work_arrangement": "unknown",
+    "content_text": "DevOps Engineer\n\nInterface Recruitment \nView all jobs\n\n\nMelbourne VIC\nEngineering - Software (Information & Communication Technology)\nContract/Temp\n$800-1000/day negotiable\nPosted 2h ago\n\u2022\nLow application volume\n\nHow you match\nSkills and credentials from the job description\nDevOps\n\nTroubleshooting\n\nMicrosoft Azure\n\nMicrosoft Azure DevOps\n\nScripting\n\nKubernetes\n\nLinux Operating System\n\nTerraform Configuration Management\n\nSQL Query Language\n\nPipelines\n\nUpload a current r\u00e9sum\u00e9 to your profile to see better matches\nWas this skills match accurate?\n\n\nHelp us match better. We match your skills and credentials based on your profile and default resum\u00e9 but we might not always get it right.\nHide all\u2060\n\nOur medium size, State Government Agency have an immediate need to boost the DevOps Team. You will be a Hands-On creative and passionate about Technology and able to Develop, Troubleshoot and Support Azure Cloud Software and Releases. The Projects are mainly Development focused as such, more focused on Azure PaaS, lots of YAML Azure DevOps scripting and deep dive Troubleshooting with Development Teams.\n\nFocus Points ...\nAzure PaaS Services\nFunction Apps\nAzure Kubernetes\nDeep Dive TroubleShooting on Azure Resources\n\nDevOps Engineer\n\nImmediate start on a 6 month contract rate negotiable\n\nSkills & Experience \n\nMicrosoft Azure cloud PaaS Function Apps platforms\n\nMicrosoft Azure cloud PaaS Web Apps platforms\n\nTroubleshooting and deep dive into Azure PaaS Linux platform\n\nTerraform Infrastructure as Code\n\nMicrosoft Azure SQL PaaS\n\nMicrosoft Azure SQL Managed Instance\n\nAzure DevOps Build and Release Pipelines\n\nAutomation scripting (Terraform / PowerShell) \n\nAzure Kubernetes Services\n\nDocker container developments\n\nPower BI Report\n\nStrong verbal and written communications skills\n\nGreat owning and managing different DevOps project skills \n\nNice to have\n\nMicrosoft Azure cloud IaaS\n\nTertiary qualifications in Computing, Information Technology and significant industry experience could be expected.\n\nExcellent verbal and written (communication) skills are expected with this role (even if you're totally introverted).\n\nIf you have a combination of these Skills and are looking for a very stable company offering an excellent salary package, please send your r\u00e9sum\u00e9 today (resume@interfacerecruitment.com.au), or talk to Jeremy King 03 9426 4888. If not this role, and you have other in demand and relevant skills, send us your resume and we'll see if we can find something else for you.\n\n\n\nEmployer questions\nYour application will include the following questions:\nHow many years' experience do you have as a devops engineer?\nWhich of the following statements best describes your right to work in Australia?",
+    "raw_payload_ref": "samples\\intake\\Interface-Recruitment-DevOps-Engineer.md",
+    "employer_questions": [
+      "How many years' experience do you have as a devops engineer?",
+      "Which of the following statements best describes your right to work in Australia?"
+    ]
+  },
+  "normalized": {
+    "document_id": "manual:Interface-Recruitment-DevOps-Engineer",
+    "title_normalized": "devops engineer",
+    "company_normalized": "interface recruitment",
+    "location_normalized": "melbourne_vic",
+    "employment_type": "contract",
+    "work_arrangement_normalized": "unknown",
+    "description_cleaned": "DevOps Engineer Interface Recruitment View all jobs Melbourne VIC Engineering - Software (Information & Communication Technology) Contract/Temp $800-1000/day negotiable Posted 2h ago \u2022 Low application volume How you match Skills and credentials from the job description DevOps Troubleshooting Microsoft Azure Microsoft Azure DevOps Scripting Kubernetes Linux Operating System Terraform Configuration Management SQL Query Language Pipelines Upload a current r\u00e9sum\u00e9 to your profile to see better matches Was this skills match accurate? Help us match better. We match your skills and credentials based on your profile and default resum\u00e9 but we might not always get it right. Hide all\u2060 Our medium size, State Government Agency have an immediate need to boost the DevOps Team. You will be a Hands-On creative and passionate about Technology and able to Develop, Troubleshoot and Support Azure Cloud Software and Releases. The Projects are mainly Development focused as such, more focused on Azure PaaS, lots of YAML Azure DevOps scripting and deep dive Troubleshooting with Development Teams. Focus Points ... Azure PaaS Services Function Apps Azure Kubernetes Deep Dive TroubleShooting on Azure Resources DevOps Engineer Immediate start on a 6 month contract rate negotiable Skills & Experience Microsoft Azure cloud PaaS Function Apps platforms Microsoft Azure cloud PaaS Web Apps platforms Troubleshooting and deep dive into Azure PaaS Linux platform Terraform Infrastructure as Code Microsoft Azure SQL PaaS Microsoft Azure SQL Managed Instance Azure DevOps Build and Release Pipelines Automation scripting (Terraform / PowerShell) Azure Kubernetes Services Docker container developments Power BI Report Strong verbal and written communications skills Great owning and managing different DevOps project skills Nice to have Microsoft Azure cloud IaaS Tertiary qualifications in Computing, Information Technology and significant industry experience could be expected. Excellent verbal and written (communication) skills are expected with this role (even if you're totally introverted). If you have a combination of these Skills and are looking for a very stable company offering an excellent salary package, please send your r\u00e9sum\u00e9 today (resume@interfacerecruitment.com.au), or talk to Jeremy King 03 9426 4888. If not this role, and you have other in demand and relevant skills, send us your resume and we'll see if we can find something else for you. Employer questions Your application will include the following questions: How many years' experience do you have as a devops engineer? Which of the following statements best describes your right to work in Australia?"
+  },
+  "extraction": {
+    "document_id": "manual:Interface-Recruitment-DevOps-Engineer",
+    "facts": {
+      "cloud_platforms": [
+        "azure"
+      ],
+      "cloud_services": [
+        "function_apps",
+        "web_apps"
+      ],
+      "containers": [
+        "kubernetes",
+        "docker"
+      ],
+      "iac_tools": [
+        "terraform"
+      ],
+      "observability_tools": [],
+      "datastores": [
+        "azure_sql"
+      ],
+      "data_and_messaging": [],
+      "backend_frameworks": [],
+      "ci_cd_tools": [
+        "azure_devops"
+      ],
+      "scripting_tools": [
+        "powershell",
+        "yaml"
+      ],
+      "api_and_architecture": [],
+      "programming_languages": [],
+      "work_arrangements": [],
+      "employment_conditions": [
+        "work_rights_required"
+      ]
+    },
+    "inferences": {
+      "role_family": "devops",
+      "seniority": null,
+      "work_arrangement": "unknown"
+    },
+    "evidence": {
+      "cloud_platforms": [
+        "Microsoft Azure"
+      ],
+      "cloud_services": [
+        "Function Apps",
+        "Microsoft Azure cloud PaaS Web Apps platforms"
+      ],
+      "containers": [
+        "Kubernetes",
+        "Docker container developments"
+      ],
+      "iac_tools": [
+        "Terraform Configuration Management"
+      ],
+      "datastores": [
+        "Microsoft Azure SQL PaaS"
+      ],
+      "ci_cd_tools": [
+        "Microsoft Azure DevOps"
+      ],
+      "scripting_tools": [
+        "Automation scripting (Terraform / PowerShell)",
+        "Our medium size, State Government Agency have an immediate need to boost the DevOps Team. You will be a Hands-On creative and passionate about Technology and able to Develop, Troubleshoot and Support Azure Cloud Software and Releases. The Projects are mainly Development focused as such, more focused on Azure PaaS, lots of YAML Azure DevOps scripting and deep dive Troubleshooting with Development Teams."
+      ],
+      "employment_conditions": [
+        "Which of the following statements best describes your right to work in Australia?"
+      ],
+      "role_family": [
+        "DevOps Engineer"
+      ]
+    },
+    "extractor_version": "v2-rules-expanded",
+    "taxonomy_version": "v2"
+  }
+}

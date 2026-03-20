@@ -1,0 +1,87 @@
+{
+  "source": {
+    "document_id": "manual:Ethos-BeathChapman-Mid-Level-Full-Stack-Engineer-React-or-Nodejs",
+    "source": "manual",
+    "source_type": "job_posting",
+    "source_url": null,
+    "captured_at": "2026-03-20T06:10:43Z",
+    "title": "Mid-Level Full Stack Engineer (React / Node.js)",
+    "company": "Ethos BeathChapman",
+    "location": "Sydney NSW (Hybrid)",
+    "posted_at": "Posted 1d ago",
+    "salary_text": "$130,000 - $160,000 + super",
+    "work_arrangement": "hybrid",
+    "content_text": "Mid-Level Full Stack Engineer (React / Node.js)\n\nEthos BeathChapman \nView all jobs\nSydney NSW (Hybrid)\nEngineering - Software (Information & Communication Technology)\nFull time\n$130,000 - $160,000 + super\nPosted 1d ago\n\nWe\u2019re hiring a Full Stack Engineer (3\u20138 years) to work on modern, customer-facing digital platforms used at scale.\n\nThis is a genuine full stack role \u2014 you\u2019ll be building across React / TypeScript (frontend) and Node.js APIs (backend) within a microservices environment, in a collaborative, engineering-led team.\nYou\u2019ll be hands-on end to end \u2014 writing clean, scalable code, contributing to testing and automation, and working closely with other engineers to ship quality software. The environment is modern (cloud, CI/CD).\n\nKey experience\n3\u20138 years in software engineering\nStrong JavaScript / TypeScript\nExperience with React (frontend)\nExperience with Node.js (APIs / backend)\nUnderstanding of REST APIs and modern architecture\nExposure to microservices and CI/CD\nIdeal for someone who enjoys building across the stack \u2014 not moving into PM or siloed roles.\nIf you\u2019re looking for a well-run team, modern stack, and true full stack ownership \u2014 we\u2019d love to hear from you.",
+    "raw_payload_ref": "samples\\intake\\Ethos-BeathChapman-Mid-Level-Full-Stack-Engineer-React-or-Nodejs.md",
+    "employer_questions": []
+  },
+  "normalized": {
+    "document_id": "manual:Ethos-BeathChapman-Mid-Level-Full-Stack-Engineer-React-or-Nodejs",
+    "title_normalized": "mid-level full stack engineer (react / node.js)",
+    "company_normalized": "ethos beathchapman",
+    "location_normalized": "sydney_nsw_hybrid",
+    "employment_type": "full_time",
+    "work_arrangement_normalized": "hybrid",
+    "description_cleaned": "Mid-Level Full Stack Engineer (React / Node.js) Ethos BeathChapman View all jobs Sydney NSW (Hybrid) Engineering - Software (Information & Communication Technology) Full time $130,000 - $160,000 + super Posted 1d ago We\u2019re hiring a Full Stack Engineer (3\u20138 years) to work on modern, customer-facing digital platforms used at scale. This is a genuine full stack role \u2014 you\u2019ll be building across React / TypeScript (frontend) and Node.js APIs (backend) within a microservices environment, in a collaborative, engineering-led team. You\u2019ll be hands-on end to end \u2014 writing clean, scalable code, contributing to testing and automation, and working closely with other engineers to ship quality software. The environment is modern (cloud, CI/CD). Key experience 3\u20138 years in software engineering Strong JavaScript / TypeScript Experience with React (frontend) Experience with Node.js (APIs / backend) Understanding of REST APIs and modern architecture Exposure to microservices and CI/CD Ideal for someone who enjoys building across the stack \u2014 not moving into PM or siloed roles. If you\u2019re looking for a well-run team, modern stack, and true full stack ownership \u2014 we\u2019d love to hear from you."
+  },
+  "extraction": {
+    "document_id": "manual:Ethos-BeathChapman-Mid-Level-Full-Stack-Engineer-React-or-Nodejs",
+    "facts": {
+      "cloud_platforms": [],
+      "cloud_services": [],
+      "containers": [],
+      "iac_tools": [],
+      "observability_tools": [],
+      "datastores": [],
+      "data_and_messaging": [],
+      "backend_frameworks": [
+        "react",
+        "nodejs"
+      ],
+      "ci_cd_tools": [],
+      "scripting_tools": [],
+      "api_and_architecture": [
+        "rest_api",
+        "microservices"
+      ],
+      "programming_languages": [
+        "typescript",
+        "javascript"
+      ],
+      "work_arrangements": [
+        "hybrid"
+      ],
+      "employment_conditions": []
+    },
+    "inferences": {
+      "role_family": "full_stack_engineering",
+      "seniority": "mid",
+      "work_arrangement": "hybrid"
+    },
+    "evidence": {
+      "backend_frameworks": [
+        "Mid-Level Full Stack Engineer (React / Node.js)",
+        "Mid-Level Full Stack Engineer (React / Node.js)"
+      ],
+      "api_and_architecture": [
+        "Understanding of REST APIs and modern architecture",
+        "This is a genuine full stack role \u2014 you\u2019ll be building across React / TypeScript (frontend) and Node.js APIs (backend) within a microservices environment, in a collaborative, engineering-led team."
+      ],
+      "programming_languages": [
+        "This is a genuine full stack role \u2014 you\u2019ll be building across React / TypeScript (frontend) and Node.js APIs (backend) within a microservices environment, in a collaborative, engineering-led team.",
+        "Strong JavaScript / TypeScript"
+      ],
+      "work_arrangements": [
+        "Sydney NSW (Hybrid)"
+      ],
+      "role_family": [
+        "Mid-Level Full Stack Engineer (React / Node.js)"
+      ],
+      "seniority": [
+        "Mid-Level Full Stack Engineer (React / Node.js)"
+      ]
+    },
+    "extractor_version": "v2-rules-expanded",
+    "taxonomy_version": "v2"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "source": {
+    "document_id": "manual:Robert-Half-Backend-Software-Engineer",
+    "source": "manual",
+    "source_type": "job_posting",
+    "source_url": null,
+    "captured_at": "2026-03-20T06:10:43Z",
+    "title": "Backend Software Engineer",
+    "company": "Robert Half",
+    "location": "Melbourne VIC (Hybrid)",
+    "posted_at": "Posted 9d ago",
+    "salary_text": "$130k - $140k p.a. + Super",
+    "work_arrangement": "hybrid",
+    "content_text": "Backend Software Engineer\n\nRobert Half \nView all jobs\n\nMelbourne VIC (Hybrid)\nEngineering - Software (Information & Communication Technology)\nFull time\n$130k - $140k p.a. + Super\nPosted 9d ago\n\u2022\nHigh application volume\n\nHow you match\nSkills and credentials from the job description\nPipelines\n\nDistributed Systems\n\nPython Programming\n\nJava Programming\n\nApache Kafka\n\nUX\n\nUpload a current r\u00e9sum\u00e9 to your profile to see better matches\nWas this skills match accurate?\n\n\nHelp us match better. We match your skills and credentials based on your profile and default resum\u00e9 but we might not always get it right.\nHide all\u2060\n\nThe Company\n\nOur client is a tech focused business searching for talented engineers across the market. With strong foundations already in place, they're now searching for a software engineer to join their team who are responsible for integration, ingestion and validation of data across the various internal systems. If you love to tailor solutions, innovate and work on AI, this could be the perfect role for you.\n\n\nThe Role\n\nIn this dynamic role, you'll face new challenges every day, applying a strong process-driven mindset while continuously looking for smarter, more innovative ways to improve how things are done. As part of the global team, you'll play a key role in driving innovation - experimenting with and operationalizing AI alongside ensuring the data platform is ready for business stakeholders to use. This is the perfect role for a hybrid engineer who has experience in software engineering alongside creating data pipelines and ingestions.\n\nYour Skills & Experience\n\n4+ years of experience as a software engineer working in a data heavy business, ideally in high-volume or distributed systems environments\nStrong programming skills in Python or Java\nExperience with creating ETL pipelines, extracting, ingesting, transforming and ensuring it's ready to be used by downstream stakeholders\nExperience with Kafka for event streaming\nA collaborative mindset-comfortable working across domains, products, and infrastructure layers.\n\nAbout You\n\nYou have exceptional technical know-how and a real passion for the end-to-end solutions that drive the user experience and customer happiness. You will have effective written and oral communication skills for use in a complex project environment.\n\nWhat's on offer?\n\nA true career opportunity with a rapidly growing company.\nExtensive opportunities to grow your skill set and enjoy career growth.\nThe camaraderie of an energetic, highly talented team of innovators.\nA company that rewards perfection and champion work-life balance.\n\nRobert Half Ltd is committed to equal opportunity and we value diversity at our company. We do not discriminate on the basis of categories protected under local law.\n\nJob Reference Number: 06810-0013399888NI\n\n\nBy clicking 'apply', you give your express consent that Robert Half may use your personal information to process your job application and to contact you from time to time for future employment opportunities. For further information on how Robert Half processes your personal information and how to access and correct your information, please read the Robert Half privacy notice: https://www.roberthalf.com/au/en/privacy. Please do not submit any sensitive personal data to us in your resume (such as government ID numbers, ethnicity, gender, religion, marital status or trade union membership) as we do not collect your sensitive personal data at this time.",
+    "raw_payload_ref": "samples\\intake\\Robert-Half-Backend-Software-Engineer.md",
+    "employer_questions": []
+  },
+  "normalized": {
+    "document_id": "manual:Robert-Half-Backend-Software-Engineer",
+    "title_normalized": "backend software engineer",
+    "company_normalized": "robert half",
+    "location_normalized": "melbourne_vic_hybrid",
+    "employment_type": "full_time",
+    "work_arrangement_normalized": "hybrid",
+    "description_cleaned": "Backend Software Engineer Robert Half View all jobs Melbourne VIC (Hybrid) Engineering - Software (Information & Communication Technology) Full time $130k - $140k p.a. + Super Posted 9d ago \u2022 High application volume How you match Skills and credentials from the job description Pipelines Distributed Systems Python Programming Java Programming Apache Kafka UX Upload a current r\u00e9sum\u00e9 to your profile to see better matches Was this skills match accurate? Help us match better. We match your skills and credentials based on your profile and default resum\u00e9 but we might not always get it right. Hide all\u2060 The Company Our client is a tech focused business searching for talented engineers across the market. With strong foundations already in place, they're now searching for a software engineer to join their team who are responsible for integration, ingestion and validation of data across the various internal systems. If you love to tailor solutions, innovate and work on AI, this could be the perfect role for you. The Role In this dynamic role, you'll face new challenges every day, applying a strong process-driven mindset while continuously looking for smarter, more innovative ways to improve how things are done. As part of the global team, you'll play a key role in driving innovation - experimenting with and operationalizing AI alongside ensuring the data platform is ready for business stakeholders to use. This is the perfect role for a hybrid engineer who has experience in software engineering alongside creating data pipelines and ingestions. Your Skills & Experience 4+ years of experience as a software engineer working in a data heavy business, ideally in high-volume or distributed systems environments Strong programming skills in Python or Java Experience with creating ETL pipelines, extracting, ingesting, transforming and ensuring it's ready to be used by downstream stakeholders Experience with Kafka for event streaming A collaborative mindset-comfortable working across domains, products, and infrastructure layers. About You You have exceptional technical know-how and a real passion for the end-to-end solutions that drive the user experience and customer happiness. You will have effective written and oral communication skills for use in a complex project environment. What's on offer? A true career opportunity with a rapidly growing company. Extensive opportunities to grow your skill set and enjoy career growth. The camaraderie of an energetic, highly talented team of innovators. A company that rewards perfection and champion work-life balance. Robert Half Ltd is committed to equal opportunity and we value diversity at our company. We do not discriminate on the basis of categories protected under local law. Job Reference Number: 06810-0013399888NI By clicking 'apply', you give your express consent that Robert Half may use your personal information to process your job application and to contact you from time to time for future employment opportunities. For further information on how Robert Half processes your personal information and how to access and correct your information, please read the Robert Half privacy notice: https://www.roberthalf.com/au/en/privacy. Please do not submit any sensitive personal data to us in your resume (such as government ID numbers, ethnicity, gender, religion, marital status or trade union membership) as we do not collect your sensitive personal data at this time."
+  },
+  "extraction": {
+    "document_id": "manual:Robert-Half-Backend-Software-Engineer",
+    "facts": {
+      "cloud_platforms": [],
+      "cloud_services": [],
+      "containers": [],
+      "iac_tools": [],
+      "observability_tools": [],
+      "datastores": [],
+      "data_and_messaging": [
+        "kafka",
+        "etl"
+      ],
+      "backend_frameworks": [],
+      "ci_cd_tools": [],
+      "scripting_tools": [],
+      "api_and_architecture": [],
+      "programming_languages": [
+        "python",
+        "java"
+      ],
+      "work_arrangements": [
+        "hybrid"
+      ],
+      "employment_conditions": []
+    },
+    "inferences": {
+      "role_family": "backend_engineering",
+      "seniority": null,
+      "work_arrangement": "hybrid"
+    },
+    "evidence": {
+      "data_and_messaging": [
+        "Apache Kafka",
+        "Experience with creating ETL pipelines, extracting, ingesting, transforming and ensuring it's ready to be used by downstream stakeholders"
+      ],
+      "programming_languages": [
+        "Python Programming",
+        "Java Programming"
+      ],
+      "work_arrangements": [
+        "Melbourne VIC (Hybrid)"
+      ],
+      "role_family": [
+        "Backend Software Engineer"
+      ]
+    },
+    "extractor_version": "v2-rules-expanded",
+    "taxonomy_version": "v2"
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "batch_summary_ref": "artifacts/_tmp_batch_delivery/intake_20260320T074500Z/batch-summary.json",
+  "reviewed_at": "2026-03-20T06:10:43Z",
+  "reviewed_count": 8,
+  "decision_counts": {
+    "promote_to_reviewed": 7,
+    "split_multi_role": 1
+  },
+  "role_family_counts": {
+    "backend_engineering": 2,
+    "software_engineering": 1,
+    "full_stack_engineering": 1,
+    "devops": 3,
+    "cloud_engineering": 1
+  },
+  "top_skill_counts": {
+    "docker": 4,
+    "work_rights_required": 4,
+    "azure": 4,
+    "terraform": 4,
+    "aws": 3,
+    "typescript": 3,
+    "kubernetes": 3,
+    "ec2": 2,
+    "ecs": 2,
+    "aws_cdk": 2,
+    "react": 2,
+    "java": 2,
+    "azure_devops": 2,
+    "cloudformation": 2,
+    "ansible": 2
+  },
+  "combination_signatures": [
+    "backend_engineering + aws + docker + aws_cdk + nestjs",
+    "software_engineering + react + java",
+    "full_stack_engineering + react + typescript",
+    "devops + azure + terraform",
+    "devops + azure + kubernetes + terraform + azure_devops",
+    "devops + aws + kubernetes + terraform + github_actions",
+    "cloud_engineering + aws + kubernetes + terraform + azure_devops",
+    "backend_engineering + python + kafka"
+  ],
+  "critical_taxonomy_gaps": [],
+  "items": [
+    {
+      "sample_id": "manual:Allume-Energy-Dev-Ops-and-Backend-Engineer",
+      "source_path": "samples\\intake\\Allume-Energy-Dev-Ops-and-Backend-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Allume-Energy-Dev-Ops-and-Backend-Engineer.output.json",
+      "title": "Dev Ops and Backend Engineer",
+      "company": "Allume Energy",
+      "role_family": "backend_engineering",
+      "seniority": null,
+      "work_arrangement": "hybrid",
+      "decision": "promote_to_reviewed",
+      "gold_candidate_eligible": false,
+      "facts_present": [
+        "aws",
+        "ec2",
+        "iot_core",
+        "rds",
+        "s3",
+        "cloudwatch",
+        "ecs",
+        "docker",
+        "aws_cdk",
+        "postgresql",
+        "redis",
+        "mqtt",
+        "nestjs",
+        "typescript",
+        "work_rights_required",
+        "no_visa_sponsorship",
+        "relocation_considered"
+      ],
+      "taxonomy_gaps": [],
+      "review_notes": [
+        "Employer questions preserved in source metadata.",
+        "Salary text captured in source metadata."
+      ]
+    },
+    {
+      "sample_id": "manual:Energetica-Software-Engineer",
+      "source_path": "samples\\intake\\Energetica-Software-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Energetica-Software-Engineer.output.json",
+      "title": "Software Engineer",
+      "company": "Energetica",
+      "role_family": "software_engineering",
+      "seniority": null,
+      "work_arrangement": "hybrid",
+      "decision": "promote_to_reviewed",
+      "gold_candidate_eligible": false,
+      "facts_present": [
+        "react",
+        "distributed_architecture",
+        "java",
+        "typescript",
+        "kotlin",
+        "work_rights_required"
+      ],
+      "taxonomy_gaps": [],
+      "review_notes": [
+        "Employer questions preserved in source metadata.",
+        "Salary text captured in source metadata."
+      ]
+    },
+    {
+      "sample_id": "manual:Ethos-BeathChapman-Mid-Level-Full-Stack-Engineer-React-or-Nodejs",
+      "source_path": "samples\\intake\\Ethos-BeathChapman-Mid-Level-Full-Stack-Engineer-React-or-Nodejs.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Ethos-BeathChapman-Mid-Level-Full-Stack-Engineer-React-or-Nodejs.output.json",
+      "title": "Mid-Level Full Stack Engineer (React / Node.js)",
+      "company": "Ethos BeathChapman",
+      "role_family": "full_stack_engineering",
+      "seniority": "mid",
+      "work_arrangement": "hybrid",
+      "decision": "promote_to_reviewed",
+      "gold_candidate_eligible": true,
+      "facts_present": [
+        "react",
+        "nodejs",
+        "rest_api",
+        "microservices",
+        "typescript",
+        "javascript"
+      ],
+      "taxonomy_gaps": [],
+      "review_notes": [
+        "Salary text captured in source metadata."
+      ]
+    },
+    {
+      "sample_id": "manual:Holocentric-DevOps-Engineer",
+      "source_path": "samples\\intake\\Holocentric-DevOps-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Holocentric-DevOps-Engineer.output.json",
+      "title": "DevOps Engineer",
+      "company": "Holocentric",
+      "role_family": "devops",
+      "seniority": null,
+      "work_arrangement": "hybrid",
+      "decision": "promote_to_reviewed",
+      "gold_candidate_eligible": false,
+      "facts_present": [
+        "azure",
+        "terraform",
+        "datadog",
+        "work_rights_required",
+        "citizenship_or_pr_required"
+      ],
+      "taxonomy_gaps": [],
+      "review_notes": [
+        "Employer questions preserved in source metadata."
+      ]
+    },
+    {
+      "sample_id": "manual:Interface-Recruitment-DevOps-Engineer",
+      "source_path": "samples\\intake\\Interface-Recruitment-DevOps-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Interface-Recruitment-DevOps-Engineer.output.json",
+      "title": "DevOps Engineer",
+      "company": "Interface Recruitment",
+      "role_family": "devops",
+      "seniority": null,
+      "work_arrangement": "unknown",
+      "decision": "promote_to_reviewed",
+      "gold_candidate_eligible": false,
+      "facts_present": [
+        "azure",
+        "function_apps",
+        "web_apps",
+        "kubernetes",
+        "docker",
+        "terraform",
+        "azure_sql",
+        "azure_devops",
+        "powershell",
+        "yaml",
+        "work_rights_required"
+      ],
+      "taxonomy_gaps": [],
+      "review_notes": [
+        "Employer questions preserved in source metadata.",
+        "Salary text captured in source metadata."
+      ]
+    },
+    {
+      "sample_id": "manual:Milestone-Information-Technology-Mid-Level-DevOps-Engineer",
+      "source_path": "samples\\intake\\Milestone-Information-Technology-Mid-Level-DevOps-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Milestone-Information-Technology-Mid-Level-DevOps-Engineer.output.json",
+      "title": "Mid-Level DevOps Engineer",
+      "company": "Milestone Information Technology",
+      "role_family": "devops",
+      "seniority": "mid",
+      "work_arrangement": "hybrid",
+      "decision": "promote_to_reviewed",
+      "gold_candidate_eligible": true,
+      "facts_present": [
+        "aws",
+        "azure",
+        "gcp",
+        "kubernetes",
+        "docker",
+        "terraform",
+        "cloudformation",
+        "ansible",
+        "prometheus",
+        "grafana",
+        "elk",
+        "github_actions",
+        "gitlab_ci",
+        "jenkins",
+        "bash",
+        "python",
+        "go"
+      ],
+      "taxonomy_gaps": [],
+      "review_notes": []
+    },
+    {
+      "sample_id": "manual:PRA-AWS-Cloud-Engineer-Baseline-Nv1-required",
+      "source_path": "samples\\intake\\PRA-AWS-Cloud-Engineer-Baseline-Nv1-required.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\PRA-AWS-Cloud-Engineer-Baseline-Nv1-required.output.json",
+      "title": "AWS Cloud Engineer - Baseline/Nv1 required",
+      "company": "PRA",
+      "role_family": "cloud_engineering",
+      "seniority": null,
+      "work_arrangement": "hybrid",
+      "decision": "split_multi_role",
+      "gold_candidate_eligible": false,
+      "facts_present": [
+        "aws",
+        "azure",
+        "ec2",
+        "ecs",
+        "kubernetes",
+        "docker",
+        "podman",
+        "terraform",
+        "aws_cdk",
+        "cloudformation",
+        "ansible",
+        "azure_devops",
+        "baseline_clearance_required"
+      ],
+      "taxonomy_gaps": [],
+      "review_notes": [
+        "Salary text captured in source metadata.",
+        "Multi-role advertisement detected; review should treat this source as split-capable."
+      ]
+    },
+    {
+      "sample_id": "manual:Robert-Half-Backend-Software-Engineer",
+      "source_path": "samples\\intake\\Robert-Half-Backend-Software-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Robert-Half-Backend-Software-Engineer.output.json",
+      "title": "Backend Software Engineer",
+      "company": "Robert Half",
+      "role_family": "backend_engineering",
+      "seniority": null,
+      "work_arrangement": "hybrid",
+      "decision": "promote_to_reviewed",
+      "gold_candidate_eligible": false,
+      "facts_present": [
+        "kafka",
+        "etl",
+        "python",
+        "java"
+      ],
+      "taxonomy_gaps": [],
+      "review_notes": [
+        "Salary text captured in source metadata."
+      ]
+    }
+  ]
+}

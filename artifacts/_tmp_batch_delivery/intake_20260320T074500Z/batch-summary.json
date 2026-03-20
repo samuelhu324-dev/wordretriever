@@ -1,0 +1,74 @@
+{
+  "input_batch_ref": "samples/intake",
+  "input_format": "text",
+  "processed_count": 8,
+  "extractor_version": "v2-rules-expanded",
+  "taxonomy_version": "v2",
+  "output_dir": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z",
+  "items": [
+    {
+      "input_path": "samples\\intake\\Allume-Energy-Dev-Ops-and-Backend-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Allume-Energy-Dev-Ops-and-Backend-Engineer.output.json",
+      "document_id": "manual:Allume-Energy-Dev-Ops-and-Backend-Engineer",
+      "title": "Dev Ops and Backend Engineer",
+      "extractor_version": "v2-rules-expanded",
+      "taxonomy_version": "v2"
+    },
+    {
+      "input_path": "samples\\intake\\Energetica-Software-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Energetica-Software-Engineer.output.json",
+      "document_id": "manual:Energetica-Software-Engineer",
+      "title": "Software Engineer",
+      "extractor_version": "v2-rules-expanded",
+      "taxonomy_version": "v2"
+    },
+    {
+      "input_path": "samples\\intake\\Ethos-BeathChapman-Mid-Level-Full-Stack-Engineer-React-or-Nodejs.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Ethos-BeathChapman-Mid-Level-Full-Stack-Engineer-React-or-Nodejs.output.json",
+      "document_id": "manual:Ethos-BeathChapman-Mid-Level-Full-Stack-Engineer-React-or-Nodejs",
+      "title": "Mid-Level Full Stack Engineer (React / Node.js)",
+      "extractor_version": "v2-rules-expanded",
+      "taxonomy_version": "v2"
+    },
+    {
+      "input_path": "samples\\intake\\Holocentric-DevOps-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Holocentric-DevOps-Engineer.output.json",
+      "document_id": "manual:Holocentric-DevOps-Engineer",
+      "title": "DevOps Engineer",
+      "extractor_version": "v2-rules-expanded",
+      "taxonomy_version": "v2"
+    },
+    {
+      "input_path": "samples\\intake\\Interface-Recruitment-DevOps-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Interface-Recruitment-DevOps-Engineer.output.json",
+      "document_id": "manual:Interface-Recruitment-DevOps-Engineer",
+      "title": "DevOps Engineer",
+      "extractor_version": "v2-rules-expanded",
+      "taxonomy_version": "v2"
+    },
+    {
+      "input_path": "samples\\intake\\Milestone-Information-Technology-Mid-Level-DevOps-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Milestone-Information-Technology-Mid-Level-DevOps-Engineer.output.json",
+      "document_id": "manual:Milestone-Information-Technology-Mid-Level-DevOps-Engineer",
+      "title": "Mid-Level DevOps Engineer",
+      "extractor_version": "v2-rules-expanded",
+      "taxonomy_version": "v2"
+    },
+    {
+      "input_path": "samples\\intake\\PRA-AWS-Cloud-Engineer-Baseline-Nv1-required.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\PRA-AWS-Cloud-Engineer-Baseline-Nv1-required.output.json",
+      "document_id": "manual:PRA-AWS-Cloud-Engineer-Baseline-Nv1-required",
+      "title": "AWS Cloud Engineer - Baseline/Nv1 required",
+      "extractor_version": "v2-rules-expanded",
+      "taxonomy_version": "v2"
+    },
+    {
+      "input_path": "samples\\intake\\Robert-Half-Backend-Software-Engineer.md",
+      "output_path": "artifacts\\_tmp_batch_delivery\\intake_20260320T074500Z\\Robert-Half-Backend-Software-Engineer.output.json",
+      "document_id": "manual:Robert-Half-Backend-Software-Engineer",
+      "title": "Backend Software Engineer",
+      "extractor_version": "v2-rules-expanded",
+      "taxonomy_version": "v2"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "source": {
+    "document_id": "manual:PRA-AWS-Cloud-Engineer-Baseline-Nv1-required",
+    "source": "manual",
+    "source_type": "job_posting",
+    "source_url": null,
+    "captured_at": "2026-03-20T06:10:43Z",
+    "title": "AWS Cloud Engineer - Baseline/Nv1 required",
+    "company": "PRA",
+    "location": "Sydney NSW (Hybrid)",
+    "posted_at": "Posted 3d ago",
+    "salary_text": "up to $900 per day + GST",
+    "work_arrangement": "hybrid",
+    "content_text": "AWS Cloud Engineer - Baseline/Nv1 required\n\nPRA \nView all jobs\n\n\nSydney NSW (Hybrid)\nNetworks & Systems Administration (Information & Communication Technology)\nContract/Temp\nup to $900 per day + GST\nPosted 3d ago\n\u2022\nMedium application volume\n\nHow you match\nSkills and credentials from the job description\nAWS\n\nKubernetes\n\nCloud Engineering\n\nTerraform Configuration Management\n\nCI/CD\n\nGit Version Control System\n\nAWS Cloudformation\n\nAnsible Configuration Management\n\nAutomation\n\nDeployment\n\nUpload a current r\u00e9sum\u00e9 to your profile to see better matches\nWas this skills match accurate?\n\n\nHelp us match better. We match your skills and credentials based on your profile and default resum\u00e9 but we might not always get it right.\nHide all\u2060\n\nAWS Cloud Engineer - $900 per day\nAWS DevOps Engineer - $820 per day\n  \n12-Month Contracts - Sydney or Canberra \u2013 Hybrid\nBaseline Clearance Required\n\nWe are looking to fill two contract positions supporting a large-scale government platform program. Both roles are hands-on, working as part of a cross-functional team to build, manage, and uplift AWS environments in accordance with government requirements.\n\nRole 1 \u2014 AWS Cloud Engineer $900 per day (super included / + GST)\nCritical Skills\nExpert EKS/Kubernetes \u2014 cluster build, multi-tenant design, RBAC, networking, storage\nAWS cloud engineering \u2014 IAM, KMS, EFS/EBS, EC2 worker nodes, VPC design\nInfrastructure as Code \u2014 Terraform / CDK, container lifecycle management\nKubernetes security \u2014 isolation, secrets management, scanning, hardened workloads\nObservability \u2014 logging, metrics, autoscaling, SRE patterns\nRole 2 \u2014 AWS DevOps Engineer $820 per day (super included / + GST)\nCritical Skills\nCI/CD pipeline build and management using Azure DevOps\nGit repository management\nInfrastructure as Code \u2014 Terraform / AWS CDK / CloudFormation\nAWS core services and day-to-day operations support\nAnsible for server configuration and automation\nContainer build and management \u2014 Docker / Podman\nECS & Fargate workload deployment and management\nBaseline security clearance is required before commencement(active or expired). Candidates may apply for one or both roles.\n\nIf this sounds like you, click apply now or email - Brad.Weaver@PRA.com.au",
+    "raw_payload_ref": "samples\\intake\\PRA-AWS-Cloud-Engineer-Baseline-Nv1-required.md",
+    "employer_questions": []
+  },
+  "normalized": {
+    "document_id": "manual:PRA-AWS-Cloud-Engineer-Baseline-Nv1-required",
+    "title_normalized": "aws cloud engineer - baseline/nv1 required",
+    "company_normalized": "pra",
+    "location_normalized": "sydney_nsw_hybrid",
+    "employment_type": "contract",
+    "work_arrangement_normalized": "hybrid",
+    "description_cleaned": "AWS Cloud Engineer - Baseline/Nv1 required PRA View all jobs Sydney NSW (Hybrid) Networks & Systems Administration (Information & Communication Technology) Contract/Temp up to $900 per day + GST Posted 3d ago \u2022 Medium application volume How you match Skills and credentials from the job description AWS Kubernetes Cloud Engineering Terraform Configuration Management CI/CD Git Version Control System AWS Cloudformation Ansible Configuration Management Automation Deployment Upload a current r\u00e9sum\u00e9 to your profile to see better matches Was this skills match accurate? Help us match better. We match your skills and credentials based on your profile and default resum\u00e9 but we might not always get it right. Hide all\u2060 AWS Cloud Engineer - $900 per day AWS DevOps Engineer - $820 per day 12-Month Contracts - Sydney or Canberra \u2013 Hybrid Baseline Clearance Required We are looking to fill two contract positions supporting a large-scale government platform program. Both roles are hands-on, working as part of a cross-functional team to build, manage, and uplift AWS environments in accordance with government requirements. Role 1 \u2014 AWS Cloud Engineer $900 per day (super included / + GST) Critical Skills Expert EKS/Kubernetes \u2014 cluster build, multi-tenant design, RBAC, networking, storage AWS cloud engineering \u2014 IAM, KMS, EFS/EBS, EC2 worker nodes, VPC design Infrastructure as Code \u2014 Terraform / CDK, container lifecycle management Kubernetes security \u2014 isolation, secrets management, scanning, hardened workloads Observability \u2014 logging, metrics, autoscaling, SRE patterns Role 2 \u2014 AWS DevOps Engineer $820 per day (super included / + GST) Critical Skills CI/CD pipeline build and management using Azure DevOps Git repository management Infrastructure as Code \u2014 Terraform / AWS CDK / CloudFormation AWS core services and day-to-day operations support Ansible for server configuration and automation Container build and management \u2014 Docker / Podman ECS & Fargate workload deployment and management Baseline security clearance is required before commencement(active or expired). Candidates may apply for one or both roles. If this sounds like you, click apply now or email - Brad.Weaver@PRA.com.au"
+  },
+  "extraction": {
+    "document_id": "manual:PRA-AWS-Cloud-Engineer-Baseline-Nv1-required",
+    "facts": {
+      "cloud_platforms": [
+        "aws",
+        "azure"
+      ],
+      "cloud_services": [
+        "ec2",
+        "ecs"
+      ],
+      "containers": [
+        "kubernetes",
+        "docker",
+        "podman"
+      ],
+      "iac_tools": [
+        "terraform",
+        "aws_cdk",
+        "cloudformation",
+        "ansible"
+      ],
+      "observability_tools": [],
+      "datastores": [],
+      "data_and_messaging": [],
+      "backend_frameworks": [],
+      "ci_cd_tools": [
+        "azure_devops"
+      ],
+      "scripting_tools": [],
+      "api_and_architecture": [],
+      "programming_languages": [],
+      "work_arrangements": [
+        "hybrid"
+      ],
+      "employment_conditions": [
+        "baseline_clearance_required"
+      ]
+    },
+    "inferences": {
+      "role_family": "cloud_engineering",
+      "seniority": null,
+      "work_arrangement": "hybrid"
+    },
+    "evidence": {
+      "cloud_platforms": [
+        "AWS Cloud Engineer - Baseline/Nv1 required",
+        "CI/CD pipeline build and management using Azure DevOps"
+      ],
+      "cloud_services": [
+        "AWS cloud engineering \u2014 IAM, KMS, EFS/EBS, EC2 worker nodes, VPC design",
+        "ECS & Fargate workload deployment and management"
+      ],
+      "containers": [
+        "Kubernetes",
+        "Container build and management \u2014 Docker / Podman",
+        "Container build and management \u2014 Docker / Podman"
+      ],
+      "iac_tools": [
+        "Terraform Configuration Management",
+        "Infrastructure as Code \u2014 Terraform / AWS CDK / CloudFormation",
+        "AWS Cloudformation",
+        "Ansible Configuration Management"
+      ],
+      "ci_cd_tools": [
+        "CI/CD pipeline build and management using Azure DevOps"
+      ],
+      "work_arrangements": [
+        "Sydney NSW (Hybrid)"
+      ],
+      "employment_conditions": [
+        "Baseline Clearance Required"
+      ],
+      "role_family": [
+        "AWS Cloud Engineer - Baseline/Nv1 required"
+      ]
+    },
+    "extractor_version": "v2-rules-expanded",
+    "taxonomy_version": "v2"
+  }
+}

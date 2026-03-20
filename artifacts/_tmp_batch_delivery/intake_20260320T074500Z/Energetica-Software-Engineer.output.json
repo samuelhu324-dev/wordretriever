@@ -1,0 +1,94 @@
+{
+  "source": {
+    "document_id": "manual:Energetica-Software-Engineer",
+    "source": "manual",
+    "source_type": "job_posting",
+    "source_url": null,
+    "captured_at": "2026-03-20T06:10:43Z",
+    "title": "Software Engineer",
+    "company": "Energetica",
+    "location": "Melbourne VIC (Hybrid)",
+    "posted_at": "Posted 17d ago",
+    "salary_text": "$100,000 \u2013 $125,000 per year",
+    "work_arrangement": "hybrid",
+    "content_text": "Software Engineer\n\nEnergetica \nView all jobs\nMelbourne VIC (Hybrid)\nEngineering - Software (Information & Communication Technology)\nFull time\n$100,000 \u2013 $125,000 per year\nPosted 17d ago\n\u2022\nHigh application volume\n\nHow you match\nSkills and credentials from the job description\nTypescript Programming\n\nJava Programming\n\nComputer Science\n\nUpload a current r\u00e9sum\u00e9 to your profile to see better matches\nWas this skills match accurate?\n\n\nHelp us match better. We match your skills and credentials based on your profile and default resum\u00e9 but we might not always get it right.\nHide all\u2060\n\nGreat to meet you. We're Energetica, an end-to-end platform for everything to do with enterprise energy and renewables. Buying, selling, analysing, optimising, working towards net zero\u2026 you name it. We do it all, and we do it for some of Australia's biggest names, too!\n\nWe're a small (but rapidly growing) team, hyper-focused on building up and scaling our technology both here and globally, and we want smart, focused and hardworking people to join us as we head towards the next stage of our evolution.\n\nBuilt and managed here in Australia, we are leading the way in technology for the energy and sustainability sector and looking for like-minded individuals who want to roll their sleeves up and get in at the ground floor of an exciting journey.\n\nOur engineering smarts are what makes us different, and it's critical that every member of our engineering team not only loves what they do, but are bloody brilliant at it.\n\nThe purpose of this role is to help us keep our platform at the forefront of the market by building enhancements and supporting our clients.\n\nFor this position, we want you to convince us that you'll be fantastic at the following:\n\nUnderstanding customer needs and requirements quickly and coming up with clever ways to address them while pushing the system\u2019s overall capabilities forward.\n\nBuilding and supporting software with a modern, distributed architecture across multiple customers/tenants.\n\nPicking up complex new concepts rapidly.\n\nTesting new stuff that doesn\u2019t quite work yet and working with us on improving it.\n\nStaying positive and productive around stress and tight deadlines which are unavoidable in a rapidly growing company.\n\nProviding feedback and discussing solutions in a constructive and collaborative way.\n\nAs we're a small startup, you will be open to:\n\nGetting involved in a little bit of everything: from customer support, to testing the system, and all the way through to energy analysis\n\nWorking hard, but also smart\n\nHelping us plan and execute our product vision\n\nWorking closely with all levels of the team, from the founder onwards\n\nYou'll need to have at least some of the following experience:\n\nReal production system development on any stack, ideally using a type-safe language (full disclosure, we mainly use a mix of TypeScript + React on the frontend, and Kotlin/Java on the backend)\n\nFamiliarity with computer science concepts that are relevant to everyday software construction\n\n\u2026 but we don't require you to be:\n\nAn energy expert \u2013 (fantastic if you are, but we're also more than happy to train you up!)\n\nA rocket scientist, or a PhD in quantum physics (but we won't hold it against you)\n\nWe offer the following:\n\nOn-site or remote work anywhere within 3-4 hours of flying time to Melbourne (however, if you\u2019re actually located in Melbourne, this would be ideal as we are in the office 2-3 days a week)\n\nThe opportunity to work with some smart people and to be part of something very big.\n\nA great salary appropriate to your experience.\n\nIf this all sounds like something you'd be interested in, tell us why and we'd be very happy to hear from you!\n\nEmployer questions\nYour application will include the following questions:\nWhich of the following statements best describes your right to work in Australia?\nHow many years' experience do you have as a software engineer?",
+    "raw_payload_ref": "samples\\intake\\Energetica-Software-Engineer.md",
+    "employer_questions": [
+      "Which of the following statements best describes your right to work in Australia?",
+      "How many years' experience do you have as a software engineer?"
+    ]
+  },
+  "normalized": {
+    "document_id": "manual:Energetica-Software-Engineer",
+    "title_normalized": "software engineer",
+    "company_normalized": "energetica",
+    "location_normalized": "melbourne_vic_hybrid",
+    "employment_type": "full_time",
+    "work_arrangement_normalized": "hybrid",
+    "description_cleaned": "Software Engineer Energetica View all jobs Melbourne VIC (Hybrid) Engineering - Software (Information & Communication Technology) Full time $100,000 \u2013 $125,000 per year Posted 17d ago \u2022 High application volume How you match Skills and credentials from the job description Typescript Programming Java Programming Computer Science Upload a current r\u00e9sum\u00e9 to your profile to see better matches Was this skills match accurate? Help us match better. We match your skills and credentials based on your profile and default resum\u00e9 but we might not always get it right. Hide all\u2060 Great to meet you. We're Energetica, an end-to-end platform for everything to do with enterprise energy and renewables. Buying, selling, analysing, optimising, working towards net zero\u2026 you name it. We do it all, and we do it for some of Australia's biggest names, too! We're a small (but rapidly growing) team, hyper-focused on building up and scaling our technology both here and globally, and we want smart, focused and hardworking people to join us as we head towards the next stage of our evolution. Built and managed here in Australia, we are leading the way in technology for the energy and sustainability sector and looking for like-minded individuals who want to roll their sleeves up and get in at the ground floor of an exciting journey. Our engineering smarts are what makes us different, and it's critical that every member of our engineering team not only loves what they do, but are bloody brilliant at it. The purpose of this role is to help us keep our platform at the forefront of the market by building enhancements and supporting our clients. For this position, we want you to convince us that you'll be fantastic at the following: Understanding customer needs and requirements quickly and coming up with clever ways to address them while pushing the system\u2019s overall capabilities forward. Building and supporting software with a modern, distributed architecture across multiple customers/tenants. Picking up complex new concepts rapidly. Testing new stuff that doesn\u2019t quite work yet and working with us on improving it. Staying positive and productive around stress and tight deadlines which are unavoidable in a rapidly growing company. Providing feedback and discussing solutions in a constructive and collaborative way. As we're a small startup, you will be open to: Getting involved in a little bit of everything: from customer support, to testing the system, and all the way through to energy analysis Working hard, but also smart Helping us plan and execute our product vision Working closely with all levels of the team, from the founder onwards You'll need to have at least some of the following experience: Real production system development on any stack, ideally using a type-safe language (full disclosure, we mainly use a mix of TypeScript + React on the frontend, and Kotlin/Java on the backend) Familiarity with computer science concepts that are relevant to everyday software construction \u2026 but we don't require you to be: An energy expert \u2013 (fantastic if you are, but we're also more than happy to train you up!) A rocket scientist, or a PhD in quantum physics (but we won't hold it against you) We offer the following: On-site or remote work anywhere within 3-4 hours of flying time to Melbourne (however, if you\u2019re actually located in Melbourne, this would be ideal as we are in the office 2-3 days a week) The opportunity to work with some smart people and to be part of something very big. A great salary appropriate to your experience. If this all sounds like something you'd be interested in, tell us why and we'd be very happy to hear from you! Employer questions Your application will include the following questions: Which of the following statements best describes your right to work in Australia? How many years' experience do you have as a software engineer?"
+  },
+  "extraction": {
+    "document_id": "manual:Energetica-Software-Engineer",
+    "facts": {
+      "cloud_platforms": [],
+      "cloud_services": [],
+      "containers": [],
+      "iac_tools": [],
+      "observability_tools": [],
+      "datastores": [],
+      "data_and_messaging": [],
+      "backend_frameworks": [
+        "react"
+      ],
+      "ci_cd_tools": [],
+      "scripting_tools": [],
+      "api_and_architecture": [
+        "distributed_architecture"
+      ],
+      "programming_languages": [
+        "java",
+        "typescript",
+        "kotlin"
+      ],
+      "work_arrangements": [
+        "hybrid",
+        "remote",
+        "on_site"
+      ],
+      "employment_conditions": [
+        "work_rights_required"
+      ]
+    },
+    "inferences": {
+      "role_family": "software_engineering",
+      "seniority": null,
+      "work_arrangement": "hybrid"
+    },
+    "evidence": {
+      "backend_frameworks": [
+        "Real production system development on any stack, ideally using a type-safe language (full disclosure, we mainly use a mix of TypeScript + React on the frontend, and Kotlin/Java on the backend)"
+      ],
+      "api_and_architecture": [
+        "Building and supporting software with a modern, distributed architecture across multiple customers/tenants."
+      ],
+      "programming_languages": [
+        "Java Programming",
+        "Typescript Programming",
+        "Real production system development on any stack, ideally using a type-safe language (full disclosure, we mainly use a mix of TypeScript + React on the frontend, and Kotlin/Java on the backend)"
+      ],
+      "work_arrangements": [
+        "Melbourne VIC (Hybrid)",
+        "On-site or remote work anywhere within 3-4 hours of flying time to Melbourne (however, if you\u2019re actually located in Melbourne, this would be ideal as we are in the office 2-3 days a week)",
+        "On-site or remote work anywhere within 3-4 hours of flying time to Melbourne (however, if you\u2019re actually located in Melbourne, this would be ideal as we are in the office 2-3 days a week)"
+      ],
+      "employment_conditions": [
+        "Which of the following statements best describes your right to work in Australia?"
+      ],
+      "role_family": [
+        "Software Engineer"
+      ]
+    },
+    "extractor_version": "v2-rules-expanded",
+    "taxonomy_version": "v2"
+  }
+}
