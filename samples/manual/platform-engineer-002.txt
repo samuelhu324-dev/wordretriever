@@ -1,0 +1,5 @@
+Senior Platform Engineer
+Location: Sydney, NSW
+Company: Northstar Cloud
+
+We are looking for a Senior Platform Engineer to help build and operate our internal developer platform on AWS. You will design reusable Kubernetes-based infrastructure, manage Terraform modules, and improve observability with Datadog and Prometheus. The role works closely with software teams to improve CI/CD workflows and developer experience. Strong Python or Go skills are preferred. Experience supporting production systems and mentoring engineers is highly regarded.

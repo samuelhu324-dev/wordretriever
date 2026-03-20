@@ -1,1 +1,10 @@
-"""wordretriever package for the single-document analysis pipeline MVP."""
+"""Single-document analysis pipeline MVP package for wordretriever."""
+
+__all__ = [
+    "cli",
+    "contracts",
+    "extract",
+    "loader",
+    "normalize",
+    "pipeline",
+]

@@ -174,6 +174,56 @@
 - phase 2 的最小目录布局已经落盘，可直接承接下一步 CLI 入口和 pipeline skeleton。
 - 后续实现应继续在上述目录内推进，不临时新开平行目录结构。
 
+## P1-C1-S2 Deliverable (Python CLI entrypoint fixed | v1)
+
+### CLI entrypoint
+
+- 本 phase 的单文档 pipeline 入口固定为：`wordretriever.cli`
+- CLI 输入参数：
+  - `input_path`
+  - `--input-format`，支持 `text` / `json` / `csv`
+  - `--output-path`，默认写入 `artifacts/_tmp_single_doc_pipeline/latest_output.json`
+
+### CLI usage contract
+
+- 入口职责：
+  - 接收单条输入文件路径
+  - 调用 pipeline 运行 source -> normalized -> extraction
+  - 把结果写成 JSON artifact
+- 默认受控样本：`samples/manual/platform-engineer-002.txt`
+- 当前实现约定：先支持单条输入，不在 CLI 层做批量调度。
+
+### P1-C1-S2 outcome
+
+- Python CLI 入口已经固定，后续实现与 drill 都应围绕该入口推进。
+- phase 2 后续无需再讨论入口形式，直接在 `wordretriever.cli` 上迭代。
+
+## P1-C1-S3 Deliverable (Pipeline skeleton | v1)
+
+### Implemented skeleton modules
+
+- `src/wordretriever/contracts.py`
+- `src/wordretriever/loader.py`
+- `src/wordretriever/normalize.py`
+- `src/wordretriever/extract.py`
+- `src/wordretriever/pipeline.py`
+- `src/wordretriever/cli.py`
+- `samples/manual/platform-engineer-002.txt`
+
+### Skeleton responsibilities
+
+- `contracts.py`：定义 source、normalized、extraction、pipeline result 的最小数据结构。
+- `loader.py`：支持从 `text` / `json` / `csv` 加载单条 source document。
+- `normalize.py`：执行最小 title/company/location 清洗与 employment type 推断。
+- `extract.py`：按 rules-first 方式抽取 facts，并做 role family / seniority 的最小 inference。
+- `pipeline.py`：串联 loader、mapper、extractor，并提供 JSON 输出写入函数。
+- `cli.py`：固定单文档 pipeline 的运行入口。
+
+### P1-C1-S3 outcome
+
+- 单文档 pipeline 的最小实现骨架已经存在，可直接进入受控样本 drill。
+- 下一步应进入 `P2-C1-S1`，用 `samples/manual/platform-engineer-002.txt` 跑出第一份 extraction artifact。
+
 ### P2 (Drill / Verify)
 
 - `P2-C1-S1`: 用 1 条受控样本跑通 pipeline 并生成 extraction JSON。
@@ -195,8 +245,8 @@
 ### P1 (Implementation)
 
 - [x] `P1-C1-S1`: Define minimal directory and artifact layout
-- [ ] `P1-C1-S2`: Fix Python CLI as pipeline entrypoint
-- [ ] `P1-C1-S3`: Draft pipeline skeleton for loader, mapper, and extractor
+- [x] `P1-C1-S2`: Fix Python CLI as pipeline entrypoint
+- [x] `P1-C1-S3`: Draft pipeline skeleton for loader, mapper, and extractor
 
 ### P2 (Drill / Verify)
 
@@ -227,5 +277,6 @@
 
 ## Recent changes (for traceability, optional)
 
+- 2026-03-20: 完成 `S1A-2A/P1-C1-S2` 与 `P1-C1-S3`，固定 Python CLI 入口并落下单文档 pipeline skeleton。
 - 2026-03-19: 完成 `S1A-2A/P0-C1-S1S3` 与 `P1-C1-S1`，冻结 phase 2 默认实现布局并创建最小目录结构。
 - 2026-03-19: 创建 `log-S1A-2A`，把第二阶段固定为单文档 analysis pipeline MVP 的实现准备与 drill/evidence 记录。
